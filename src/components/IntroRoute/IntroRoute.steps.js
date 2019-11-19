@@ -226,11 +226,12 @@ export const steps = {
     getMargin: marginFunctions.small,
     children: ({ orientation }) => (
       <Fragment>
-        <Heading>Listen in</Heading>
+        <Heading>What are the different types of sugar we consume?</Heading>
         <Paragraph>
-          This guide deals with audio waves, and so it's beneficial to be able
-          to hear stuff. This way, when you change parameters, you can hear the
-          difference it makes.
+        All carbohydrates are made up of six-carbon sugars (hexoses). 
+        These sugars are known as fructose, glucose, and galactose. 
+        These basic sugars make up the building blocks of 6 more complex carbohydrates: 
+        sucrose, maltose, lactose, glycogen, cellulose, and starch.
         </Paragraph>
         <Paragraph>
           Because nobody likes autoplaying sounds, the volume is currently
@@ -262,19 +263,24 @@ export const steps = {
     ...defaults,
     children: (
       <Fragment>
-        <SectionTitle>1. Reading Waveforms</SectionTitle>
+        <SectionTitle>1. Mouth and Esophagus</SectionTitle>
         <Paragraph>
-          First, let's take a closer look at the waveform {waveformPosition}.
+          Sugars, like starches, are broken down by a mouth enzyme 
+          called salivary amylase. This enzyme breaks down polysaccharides 
+          into disaccharides, thereby beginning sugar digestion.
         </Paragraph>
-
         <Paragraph>
+          From here, sugars are passed to the esophagus, a muscular tube 
+          which funnels foods from the mouth to the stomach.
+        </Paragraph>
+        {/* <Paragraph>
           We're looking at a graph, a data visualization. The blue line is the
           data we're graphing, and it represents a sound wave. Specifically,
           it's telling us about the wave's <strong>displacement</strong>, and
           how it changes over <strong>time</strong>.
-        </Paragraph>
+        </Paragraph> */}
 
-        <Paragraph>Let's dig into what that means.</Paragraph>
+        {/* <Paragraph>Let's dig into what that means.</Paragraph> */}
       </Fragment>
     ),
   },
@@ -304,19 +310,20 @@ export const steps = {
     getMargin: marginFunctions.xsmall,
     children: (
       <Fragment>
-        <Heading>Displacement</Heading>
+        <Heading>2. Stomach</Heading>
         <Paragraph>
-          When you pluck a guitar's string, you cause the string to wobble back
-          and forth. If you had a zoomed-in, slow-motion camera, you'd be able
-          to see that it oscillates from side to side, like a clock's pendulum.
+          Once food reaches the stomach, salivary enzymes (amylase) are denatured.
         </Paragraph>
 
         <Paragraph>
-          If you had the world's smallest ruler, you could measure the distance
-          that the string moves from its default, resting position.
+          From here, pancreatic amylase takes over and resumes digestion. 
+          Disaccharides are broken down by intestinal brush border enzymes 
+          called disaccharidases. Because the intestines can only absorb 
+          monosaccharides, the stomach must break all the poly and disaccharides 
+          before passing them onto the intestines.
         </Paragraph>
 
-        <Paragraph>
+        {/* <Paragraph>
           When the guitar string vibrates, it causes a chain reaction with the
           air molecules around it; they all start vibrating as well, radiating
           outwards.
@@ -354,7 +361,7 @@ export const steps = {
           <Paragraph>
             This idea is explored in much greater detail in Part 2, below.
           </Paragraph>
-        </Sidebar>
+        </Sidebar> */}
       </Fragment>
     ),
   },
@@ -366,21 +373,20 @@ export const steps = {
     getMargin: marginFunctions.xsmall,
     children: (
       <Fragment>
-        <Heading>Amplitude</Heading>
+        <Heading>3. Small/Large Intestine</Heading>
         <Paragraph>
-          Waveforms are abstract representations of sound waves. While a real
-          sound wave might displace an air molecule by 4 nanometers, we tend to
-          use abstract measurements when dealing with waveforms.
+          The monosaccharides passed down from the stomach are absorbed 
+          through the wall of the small intestine. The intestines release 
+          glucose into the bloodstream via various mechanisms along the 
+          intestinal walls.
         </Paragraph>
 
         <Paragraph>
-          This is where <strong>amplitude</strong> comes in. It measures how
-          much a molecule is displaced from its resting position. In our case,
-          we're measuring it from 0 (silent) to 1 (the maximum amount
-          displaced).
+          Some of the monosaccharide units are then transferred to the liver 
+          through the portal vein.
         </Paragraph>
 
-        <Paragraph>
+        {/* <Paragraph>
           Amplitude can be thought of as loudness. The more the air molecules
           are displaced, the louder the sound seems to us.
         </Paragraph>
@@ -400,7 +406,7 @@ export const steps = {
             television you're watching, even if that television is displacing
             the air more than the cheering.
           </Paragraph>
-        </Sidebar>
+        </Sidebar> */}
       </Fragment>
     ),
   },
@@ -414,7 +420,7 @@ export const steps = {
     children: (
       <Fragment>
         <Paragraph>
-          Let's make this interactive! Use the{' '}
+          Pancreas's response to digestion{' '}
           <SliderIcon fieldName="amplitude" />{' '}
           <LandscapeOnly>below</LandscapeOnly>
           <PortraitOnly>above</PortraitOnly> the waveform to see how changing
@@ -422,8 +428,15 @@ export const steps = {
         </Paragraph>
 
         <Paragraph>
-          Try setting it all the way to 0, and notice how the line flattens out.
-          0 amplitude means that it's completely silent.
+          After sugar is released into the bloodstream, the pancreas releases 
+          insulin to help your cells use the sugar as energy. Insulin attaches 
+          to and signals cells to absorb sugar, often compared to a “key” that 
+          unlocks cells to allow sugar to enter cells and be used as energy. 
+          Insulin is necessary for the conversion of sugar to energy. 
+          Those with type 1 diabetes are unable to produce insulin because beta 
+          cells in their pancreas are damaged. In contrast, those with type 2 
+          diabetes are resistant to insulin. In both cases, people with diabetes 
+          need insulin shots to help their bodies process glucose.
         </Paragraph>
 
         <br />
@@ -448,21 +461,17 @@ export const steps = {
     showCycleIndicator: true,
     children: (
       <Fragment>
-        <Heading>Frequency</Heading>
+        <Heading>5. Liver assists with blood sugar level</Heading>
 
         <Paragraph>
-          The waveform has been updated so that it repeats twice in the
-          available time (or, phrased another way, it's twice as fast).
+        If your blood sugar dips too low, liver breaks down glycogen (stored in __) 
+        and releases them into the bloodstream. So when you’re hungry, your liver is 
+        helping you keep up your energy!
         </Paragraph>
 
         <Paragraph>
-          The waveform we're looking at is <strong>periodic</strong>; this means
-          that the waveform can be repeated to produce a constant tone. When you
-          unmute the sound, notice how the sound is totally consistent; it
-          doesn't change from one second to the next. Periodic waveforms allow
-          you to produce constant sound by repeating the waveform over and over.
-          This differs from, say, a piano, where the quality of the note changes
-          over time.
+        If your blood sugar is high, liver filters some of the glucose from the 
+        blood and stores them as glycogen for later usage.
         </Paragraph>
 
         <Paragraph>
