@@ -1,0 +1,16 @@
+[ignore]
+<PROJECT_ROOT>/lib/.*
+.*/node_modules/immutable/.*
+.*/node_modules/flow-coverage-report/.*
+.*/node_modules/preact/.*
+.*/node_modules/@storybook/.*
+.*/node_modules/radium/.*
+.*/demo/*
+
+[include]
+
+[libs]
+flow-typed
+
+[options]
+esproposal.class_instance_fields=enable
