@@ -324,88 +324,88 @@ class IntroRoute extends PureComponent<Props, State> {
     );
   }
 
-  renderVolumeControl() {
-    const { currentStep, audioVolume, audioMuted } = this.state;
+  // renderVolumeControl() {
+  //   const { currentStep, audioVolume, audioMuted } = this.state;
 
-    const stepData = steps[currentStep];
+  //   const stepData = steps[currentStep];
 
-    return (
-      <VolumeAdjusterLayer>
-        <FadeTransition isVisible={stepData.showVolumeControls}>
-          <VolumeAdjusterWrapper>
-            <VolumeAdjuster
-              currentVolume={audioVolume}
-              isMuted={audioMuted}
-              onAdjustVolume={this.handleUpdateAudioVolume}
-              onToggleMute={this.handleToggleMuteAudio}
-            />
-          </VolumeAdjusterWrapper>
-        </FadeTransition>
-      </VolumeAdjusterLayer>
-    );
-  }
+  //   return (
+  //     <VolumeAdjusterLayer>
+  //       <FadeTransition isVisible={stepData.showVolumeControls}>
+  //         <VolumeAdjusterWrapper>
+  //           <VolumeAdjuster
+  //             currentVolume={audioVolume}
+  //             isMuted={audioMuted}
+  //             onAdjustVolume={this.handleUpdateAudioVolume}
+  //             onToggleMute={this.handleToggleMuteAudio}
+  //           />
+  //         </VolumeAdjusterWrapper>
+  //       </FadeTransition>
+  //     </VolumeAdjusterLayer>
+  //   );
+  // }
 
-  renderWaveformColumn(
-    amplitude: number,
-    frequency: number,
-    convergence: number,
-    phase: number,
-    progress: number
-  ) {
-    const { currentStep, harmonicsForShape, numOfHarmonics } = this.state;
+  // renderWaveformColumn(
+  //   amplitude: number,
+  //   frequency: number,
+  //   convergence: number,
+  //   phase: number,
+  //   progress: number
+  // ) {
+  //   const { currentStep, harmonicsForShape, numOfHarmonics } = this.state;
 
-    const stepData = steps[currentStep];
+  //   const stepData = steps[currentStep];
 
-    return (
-      <WaveformColumn isVisible={stepData.showWaveform}>
-        <IntroRouteWaveformWrapper>
-          {(width: number) => (
-            <FlexParent>
-              <WaveformWrapper>
-                {!stepData.useWaveformAddition && (
-                  <IntroRouteWaveform
-                    width={width}
-                    amplitude={amplitude}
-                    frequency={frequency}
-                    progress={progress}
-                    stepData={stepData}
-                  />
-                )}
+  //   return (
+  //     <WaveformColumn isVisible={stepData.showWaveform}>
+  //       <IntroRouteWaveformWrapper>
+  //         {(width: number) => (
+  //           <FlexParent>
+  //             <WaveformWrapper>
+  //               {!stepData.useWaveformAddition && (
+  //                 <IntroRouteWaveform
+  //                   width={width}
+  //                   amplitude={amplitude}
+  //                   frequency={frequency}
+  //                   progress={progress}
+  //                   stepData={stepData}
+  //                 />
+  //               )}
 
-                {stepData.useWaveformAddition && (
-                  <IntroRouteWaveformAddition
-                    type={stepData.waveformAdditionType}
-                    width={width}
-                    stepData={stepData}
-                    baseAmplitude={amplitude}
-                    baseFrequency={frequency}
-                    harmonicsForShape={harmonicsForShape}
-                    numOfHarmonics={numOfHarmonics}
-                    convergence={convergence}
-                    phase={phase}
-                  />
-                )}
-              </WaveformWrapper>
-              <WaveformControls
-                width={width}
-                amplitude={amplitude}
-                frequency={frequency}
-                numOfHarmonics={numOfHarmonics}
-                convergence={convergence}
-                phase={phase}
-                handleUpdateAmplitude={this.handleUpdateAmplitude}
-                handleUpdateFrequency={this.handleUpdateFrequency}
-                handleUpdateNumOfHarmonics={this.handleUpdateNumOfHarmonics}
-                handleUpdateConvergence={this.handleUpdateConvergence}
-                handleUpdatePhase={this.handleUpdatePhase}
-                stepData={stepData}
-              />
-            </FlexParent>
-          )}
-        </IntroRouteWaveformWrapper>
-      </WaveformColumn>
-    );
-  }
+  //               {stepData.useWaveformAddition && (
+  //                 <IntroRouteWaveformAddition
+  //                   type={stepData.waveformAdditionType}
+  //                   width={width}
+  //                   stepData={stepData}
+  //                   baseAmplitude={amplitude}
+  //                   baseFrequency={frequency}
+  //                   harmonicsForShape={harmonicsForShape}
+  //                   numOfHarmonics={numOfHarmonics}
+  //                   convergence={convergence}
+  //                   phase={phase}
+  //                 />
+  //               )}
+  //             </WaveformWrapper>
+  //             <WaveformControls
+  //               width={width}
+  //               amplitude={amplitude}
+  //               frequency={frequency}
+  //               numOfHarmonics={numOfHarmonics}
+  //               convergence={convergence}
+  //               phase={phase}
+  //               handleUpdateAmplitude={this.handleUpdateAmplitude}
+  //               handleUpdateFrequency={this.handleUpdateFrequency}
+  //               handleUpdateNumOfHarmonics={this.handleUpdateNumOfHarmonics}
+  //               handleUpdateConvergence={this.handleUpdateConvergence}
+  //               handleUpdatePhase={this.handleUpdatePhase}
+  //               stepData={stepData}
+  //             />
+  //           </FlexParent>
+  //         )}
+  //       </IntroRouteWaveformWrapper>
+  //     </WaveformColumn>
+  //   );
+  // }
 
   renderTutorialColumn(amplitude: number, frequency: number, progress: number) {
     const { currentStep, windowHeight } = this.state;
@@ -450,9 +450,9 @@ class IntroRoute extends PureComponent<Props, State> {
     return (
       <Fragment>
         <MaxWidthWrapper>
-          {this.renderAudio()}
+          {/* {this.renderAudio()} */}
 
-          {this.renderVolumeControl()}
+          {/* {this.renderVolumeControl()} */}
 
           <WaveformPlayer
             isPlaying={stepData.isPlaying}
@@ -463,13 +463,13 @@ class IntroRoute extends PureComponent<Props, State> {
           >
             {({ amplitude, frequency, convergence, phase, progress }) => (
               <MainContent>
-                {this.renderWaveformColumn(
+                {/* {this.renderWaveformColumn(
                   amplitude,
                   frequency,
                   convergence,
                   phase,
                   progress
-                )}
+                )} */}
                 {this.renderTutorialColumn(amplitude, frequency, progress)}
               </MainContent>
             )}
