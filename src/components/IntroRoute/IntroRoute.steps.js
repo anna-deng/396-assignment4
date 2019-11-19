@@ -206,18 +206,15 @@ export const steps = {
     getMargin: marginFunctions.small,
     children: (
       <Fragment>
-        <Paragraph>Hi there!</Paragraph>
+        {/* <Paragraph>Hello!</Paragraph> */}
         <Paragraph>
-          This interactive guide introduces and explores waveforms. We'll cover
-          how to read these funny shapes, go over the fundamental physics of
-          sound, learn how it relates to music and harmony, and discover how to
-          build complex tones from simple ones.
+        Carbohydrates make up approximately half the calories consumed by the average American. 
+        These sugars are highly complex molecules that can significantly impact the health of our bodies. 
+        These long term consequences include weight gain, impaired brain function, and lack of muscle development. 
+        Overconsumption of sugars can even lead to chronic illnesses such as diabetes.
         </Paragraph>
         <Paragraph>
-          This guide is aimed at a general audience–no prior knowledge is
-          required. It may be of particular interest to musicians, producers,
-          and aspiring audio engineers, but it's designed to be accessible to
-          everyone!
+        Follow this exploratory visualization to understand what happens to your body when you consume sugar!
         </Paragraph>
       </Fragment>
     ),

@@ -7,8 +7,8 @@ import { COLORS, BREAKPOINTS } from '../../constants';
 const Header = () => {
   return (
     <HeaderElem>
-      <TitleIntro>Let's Learn About</TitleIntro>
-      <Title>Waveforms</Title>
+      <TitleIntro>How do our bodies digest</TitleIntro>
+      <Title>Sugar?</Title>
     </HeaderElem>
   );
 };
