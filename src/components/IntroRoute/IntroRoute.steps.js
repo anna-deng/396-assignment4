@@ -21,6 +21,7 @@ import LandscapeOnly from '../LandscapeOnly';
 import Link from '../Link';
 import SliderIcon from '../SliderIcon';
 
+
 import type {
   WaveformShape,
   HarmonicsForShape,
@@ -29,73 +30,25 @@ import type {
 
 export type IntroStep =
   | 'title'
-  | 'about-this-thing'
-  | 'about-sound-toggling'
-  | 'reading-waveform-graphs-intro'
-  | 'x-axis-time'
-  | 'y-axis-displacement'
-  | 'y-axis-amplitude'
-  | 'y-axis-amplitude-with-control'
-  | 'frequency-introduction'
-  | 'frequency-introduction-pt2'
-  | 'frequency-with-control'
-  | 'reading-waveform-graphs-summary'
-  | 'how-sound-works-intro'
-  | 'how-sound-works-air-grid'
-  | 'how-sound-works-air-grid-pt2'
-  | 'harmonics-intro'
-  | 'sine-wave-graph'
-  | 'triangle-wave'
-  | 'triangle-wave-graph'
-  | 'square-wave'
-  | 'square-wave-graph'
-  | 'sawtooth-wave'
-  | 'sawtooth-wave-graph'
-  | 'additive-synthesis-intro'
-  | 'additive-synthesis-basic-add'
-  | 'additive-synthesis-intro-convergence'
-  | 'additive-synthesis-intro-num-of-harmonics'
-  | 'additive-synthesis-harmonics-tie-in'
-  | 'additive-synthesis-phase'
-  | 'additive-synthesis-noise-cancelling'
-  | 'additive-synthesis-music'
-  | 'conclusion'
-  | 'over';
+  | 'intro'
+  | 'types-of-sugar'
+  | 'mouth-and-esophagus'
+  | 'stomach'
+  | 'small-large-intestine'
+  | 'pancreas'
+  | 'liver'
+  | 'conclusion';
 
 export const INTRO_STEPS: Array<IntroStep> = [
   'title',
-  'about-this-thing',
-  'about-sound-toggling',
-  'reading-waveform-graphs-intro',
-  'x-axis-time',
-  'y-axis-displacement',
-  'y-axis-amplitude',
-  'y-axis-amplitude-with-control',
-  'frequency-introduction',
-  'frequency-introduction-pt2',
-  'frequency-with-control',
-  'reading-waveform-graphs-summary',
-  'how-sound-works-intro',
-  'how-sound-works-air-grid',
-  'how-sound-works-air-grid-pt2',
-  'harmonics-intro',
-  'sine-wave-graph',
-  'triangle-wave',
-  'triangle-wave-graph',
-  'square-wave',
-  'square-wave-graph',
-  'sawtooth-wave',
-  'sawtooth-wave-graph',
-  'additive-synthesis-intro',
-  'additive-synthesis-basic-add',
-  'additive-synthesis-intro-convergence',
-  'additive-synthesis-intro-num-of-harmonics',
-  'additive-synthesis-harmonics-tie-in',
-  'additive-synthesis-phase',
-  'additive-synthesis-noise-cancelling',
-  'additive-synthesis-music',
-  'conclusion',
-  'over',
+  'intro',
+  'types-of-sugar',
+  'mouth-and-esophagus',
+  'stomach',
+  'small-large-intestine',
+  'pancreas',
+  'liver',
+  'conclusion'
 ];
 
 export type StepData = {
@@ -198,7 +151,7 @@ export const steps = {
     getMargin: marginFunctions.none,
     children: <Header />,
   },
-  'about-this-thing': {
+  'intro': {
     ...defaults,
     isPlaying: true,
     showYAxis: false,
@@ -206,7 +159,6 @@ export const steps = {
     getMargin: marginFunctions.small,
     children: (
       <Fragment>
-        {/* <Paragraph>Hello!</Paragraph> */}
         <Paragraph>
         Carbohydrates make up approximately half the calories consumed by the average American. 
         These sugars are highly complex molecules that can significantly impact the health of our bodies. 
@@ -219,7 +171,7 @@ export const steps = {
       </Fragment>
     ),
   },
-  'about-sound-toggling': {
+  'types-of-sugar': {
     ...defaults,
     isPlaying: true,
     showYAxis: false,
@@ -239,27 +191,10 @@ export const steps = {
           <PortraitOnly>top-right</PortraitOnly>
           <LandscapeOnly>bottom-left</LandscapeOnly> corner.
         </Paragraph>
-        {/* <LandscapeOnly>
-          <Paragraph>
-            You can also use <strong>keyboard shortcuts</strong>! The numbers{' '}
-            <KeyboardCharacter>0</KeyboardCharacter> –{' '}
-            <KeyboardCharacter>9</KeyboardCharacter> control the volume. You can
-            also press <KeyboardCharacter>M</KeyboardCharacter> to mute or
-            unmute the audio.
-          </Paragraph>
-          <Paragraph>
-            <Emphasized>
-              Try it now by pressing <KeyboardCharacter>M</KeyboardCharacter> on
-              your keyboard!
-            </Emphasized>
-          </Paragraph>
-
-          <Paragraph>You should hear a constant bass tone.</Paragraph>
-        </LandscapeOnly> */}
       </Fragment>
     ),
   },
-  'reading-waveform-graphs-intro': {
+  'mouth-and-esophagus': {
     ...defaults,
     children: (
       <Fragment>
@@ -273,14 +208,6 @@ export const steps = {
           From here, sugars are passed to the esophagus, a muscular tube 
           which funnels foods from the mouth to the stomach.
         </Paragraph>
-        {/* <Paragraph>
-          We're looking at a graph, a data visualization. The blue line is the
-          data we're graphing, and it represents a sound wave. Specifically,
-          it's telling us about the wave's <strong>displacement</strong>, and
-          how it changes over <strong>time</strong>.
-        </Paragraph> */}
-
-        {/* <Paragraph>Let's dig into what that means.</Paragraph> */}
       </Fragment>
     ),
   },
@@ -302,7 +229,7 @@ export const steps = {
   //     </Fragment>
   //   ),
   // },
-  'y-axis-displacement': {
+  'stomach': {
     ...defaults,
     waveformOpacity: 0.5,
     showYAxisLabels: true,
@@ -365,7 +292,7 @@ export const steps = {
       </Fragment>
     ),
   },
-  'y-axis-amplitude': {
+  'small-large-intestine': {
     ...defaults,
     waveformOpacity: 0.5,
     showYAxisLabels: true,
@@ -410,7 +337,7 @@ export const steps = {
       </Fragment>
     ),
   },
-  'y-axis-amplitude-with-control': {
+  'pancreas': {
     ...defaults,
     frequencyOverride: 1,
     getMargin: marginFunctions.xsmall,
@@ -452,7 +379,7 @@ export const steps = {
       </Fragment>
     ),
   },
-  'frequency-introduction': {
+  'liver': {
     ...defaults,
     amplitudeOverride: 1,
     frequencyOverride: 2,
@@ -488,62 +415,20 @@ export const steps = {
       </Fragment>
     ),
   },
-  // 'frequency-introduction-pt2': {
-  //   ...defaults,
-  //   getMargin: marginFunctions.xsmall,
-  //   waveformOpacity: 0.5,
-  //   showXAxisLabels: true,
-  //   frequencyOverride: 2,
-  //   children: (
-  //     <Fragment>
-  //       <Paragraph>
-  //         Frequency is similar to "pitch". The faster a wave repeats itself, the
-  //         higher the pitch of the note.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         For example, when a singer sings an "A4" note (The "A" in the middle
-  //         of a typical piano), their throat vibrates at 440Hz. If their voice
-  //         raises to a "C5" note, 3 semitones higher, their throat would vibrate
-  //         at ~523Hz.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         This phenomenon doesn't just happen with music. Think about a car's
-  //         engine, and how the faster it "revs", the higher the pitch. The same
-  //         can be said for a hand mixer, or a drill. Any physical object that
-  //         makes noise doing the same thing hundreds or thousands of times a
-  //         second should have a discernable pitch.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Not all sound is periodic, though. For example, white noise—the sound
-  //         of static, or waves crashing on the beach—is just a uniform
-  //         distribution of audible frequencies. Because it isn't periodic, it
-  //         doesn't have a discernable pitch.
-  //       </Paragraph>
-
-  //       <Sidebar type="warning">
-  //         <Paragraph>
-  //           It's important to point out that the waveforms we've been dealing
-  //           with so far, at 1Hz and 2Hz, have been far too low-frequency to be
-  //           audible. Perfect human hearing ranges from 20Hz to 20,000Hz, with
-  //           20Hz being the lowest sub-bass you can hear.
-  //         </Paragraph>
-  //         <Paragraph>
-  //           The reason for this discrepancy is that it's much easier to teach
-  //           the concepts when the waves are slower. For example, you wouldn't be
-  //           able to see a 440Hz wave oscillate: it's much too fast.
-  //         </Paragraph>
-  //         <Paragraph>
-  //           The wave you hear when you unmute the sound is about{' '}
-  //           <strong>100 times faster</strong> than the waveform being
-  //           visualized.
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
+  'conclusion': {
+    ...defaults,
+    getMargin: marginFunctions.xsmall,
+    waveformOpacity: 0.5,
+    showXAxisLabels: true,
+    frequencyOverride: 2,
+    children: (
+      <Fragment>
+        <Paragraph>
+          conclusion
+        </Paragraph>
+      </Fragment>
+    ),
+  },
   // 'frequency-with-control': {
   //   ...defaults,
   //   getMargin: marginFunctions.small,

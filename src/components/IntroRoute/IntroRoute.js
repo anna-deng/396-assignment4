@@ -21,6 +21,8 @@ import VolumeAdjuster from '../VolumeAdjuster';
 import FadeTransition from '../FadeTransition';
 import WaveformControls from '../WaveformControls';
 
+import IntroFace from '../IntroFace';
+
 import { steps, stepsArray, INTRO_STEPS } from './IntroRoute.steps';
 import { getActiveSectionInWindow } from './IntroRoute.helpers';
 
@@ -209,120 +211,120 @@ class IntroRoute extends PureComponent<Props, State> {
     this.setState({ currentStep: nextStep });
   };
 
-  renderAudio() {
-    const {
-      currentStep,
-      amplitude,
-      frequency,
-      phase,
-      harmonicsForShape,
-      numOfHarmonics,
-      audioVolume,
-      audioMuted,
-      audioEnabled,
-    } = this.state;
+  // renderAudio() {
+  //   const {
+  //     currentStep,
+  //     amplitude,
+  //     frequency,
+  //     phase,
+  //     harmonicsForShape,
+  //     numOfHarmonics,
+  //     audioVolume,
+  //     audioMuted,
+  //     audioEnabled,
+  //   } = this.state;
 
-    // This renders the actual audio: No visual UI.
-    // This is dependent on audio being enabled, which only happens when the
-    // user unmutes the audio somehow.
-    //
-    // This is mostly to get around mobile Safari's requirement that audio only
-    // happen as a response to user action.
-    if (!audioEnabled) {
-      return null;
-    }
+  //   // This renders the actual audio: No visual UI.
+  //   // This is dependent on audio being enabled, which only happens when the
+  //   // user unmutes the audio somehow.
+  //   //
+  //   // This is mostly to get around mobile Safari's requirement that audio only
+  //   // happen as a response to user action.
+  //   if (!audioEnabled) {
+  //     return null;
+  //   }
 
-    const stepData = steps[currentStep];
+  //   const stepData = steps[currentStep];
 
-    const effectiveAudioVolume = (audioMuted ? 0 : audioVolume) * 0.5;
+  //   const effectiveAudioVolume = (audioMuted ? 0 : audioVolume) * 0.5;
 
-    // While our waveforms will render between 0.2Hz and 3Hz, we also have an
-    // oscillator that needs to vibrate at normal ranges.
-    // By multiplying by 100, we ensure that doubling the unit still augments
-    // the pitch by an octave. We also add 100 to make the low-end audible.
-    const adjustedAudibleFrequency = frequency * 130.81;
+  //   // While our waveforms will render between 0.2Hz and 3Hz, we also have an
+  //   // oscillator that needs to vibrate at normal ranges.
+  //   // By multiplying by 100, we ensure that doubling the unit still augments
+  //   // the pitch by an octave. We also add 100 to make the low-end audible.
+  //   const adjustedAudibleFrequency = frequency * 130.81;
 
-    return (
-      <AudioOutput masterVolume={effectiveAudioVolume}>
-        {(audioCtx, masterOut) =>
-          // TODO: I found out too late that the Web Audio API has a
-          // periodicWave type which does exactly what I want, albeit with a
-          // bunch of fourier math.
-          //
-          // It would also help with the phase issue, since then it's just
-          // a simple param.
-          //
-          // Switch to it!
-          // https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
-          stepData.useWaveformAddition ? (
-            getWaveforms({
-              type: stepData.waveformAdditionType,
-              baseFrequency: adjustedAudibleFrequency,
-              baseAmplitude: amplitude,
-              harmonicsForShape,
-              phase,
-              numOfHarmonics,
-            })
-              .filter(({ frequency }) => frequency < 20000)
-              .map(({ frequency, amplitude, offset }, index, waveforms) => {
-                // Web Audio API doesn't support phase as a param to
-                // Oscillators. This is a shame, since I need to show how phase
-                // offset affects amplitude.
-                //
-                // My hacky workaround is just to multiply the amplitudes when
-                // appropriate.
-                //
-                if (stepData.waveformAdditionType === 'phase') {
-                  // HACK: This whole bit is gross. This should really be
-                  // abstracted elsewhere.
+  //   return (
+  //     <AudioOutput masterVolume={effectiveAudioVolume}>
+  //       {(audioCtx, masterOut) =>
+  //         // TODO: I found out too late that the Web Audio API has a
+  //         // periodicWave type which does exactly what I want, albeit with a
+  //         // bunch of fourier math.
+  //         //
+  //         // It would also help with the phase issue, since then it's just
+  //         // a simple param.
+  //         //
+  //         // Switch to it!
+  //         // https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
+  //         stepData.useWaveformAddition ? (
+  //           getWaveforms({
+  //             type: stepData.waveformAdditionType,
+  //             baseFrequency: adjustedAudibleFrequency,
+  //             baseAmplitude: amplitude,
+  //             harmonicsForShape,
+  //             phase,
+  //             numOfHarmonics,
+  //           })
+  //             .filter(({ frequency }) => frequency < 20000)
+  //             .map(({ frequency, amplitude, offset }, index, waveforms) => {
+  //               // Web Audio API doesn't support phase as a param to
+  //               // Oscillators. This is a shame, since I need to show how phase
+  //               // offset affects amplitude.
+  //               //
+  //               // My hacky workaround is just to multiply the amplitudes when
+  //               // appropriate.
+  //               //
+  //               if (stepData.waveformAdditionType === 'phase') {
+  //                 // HACK: This whole bit is gross. This should really be
+  //                 // abstracted elsewhere.
 
-                  // We know that for phase addition, we only have 2 waveforms,
-                  // and the phase is being applied to the 1st one.
-                  // No matter which one we're iterating through in this map,
-                  // we want to consider the first waveform's offset.
-                  const waveformWithOffset = waveforms[0];
+  //                 // We know that for phase addition, we only have 2 waveforms,
+  //                 // and the phase is being applied to the 1st one.
+  //                 // No matter which one we're iterating through in this map,
+  //                 // we want to consider the first waveform's offset.
+  //                 const waveformWithOffset = waveforms[0];
 
-                  // The offset is a number from 0 to 100.
-                  // At 0 and 100, the amplitude is 1.
-                  // at 50, the amplitude is 0.
-                  const { offset } = waveformWithOffset;
+  //                 // The offset is a number from 0 to 100.
+  //                 // At 0 and 100, the amplitude is 1.
+  //                 // at 50, the amplitude is 0.
+  //                 const { offset } = waveformWithOffset;
 
-                  // By subtracting 50, we make the value range from -50 to 50.
-                  // Then, we can get the absolute value so that it's from 0
-                  // to 50.
-                  // Finally, we multiply by 2 (so that it's 0-100), and divide
-                  // by 100 (so that it's 0-1).
-                  const absoluteOffset = Math.abs(50 - offset) * 2 / 100;
+  //                 // By subtracting 50, we make the value range from -50 to 50.
+  //                 // Then, we can get the absolute value so that it's from 0
+  //                 // to 50.
+  //                 // Finally, we multiply by 2 (so that it's 0-100), and divide
+  //                 // by 100 (so that it's 0-1).
+  //                 const absoluteOffset = Math.abs(50 - offset) * 2 / 100;
 
-                  amplitude *= absoluteOffset;
-                }
+  //                 amplitude *= absoluteOffset;
+  //               }
 
-                return (
-                  <Oscillator
-                    key={index}
-                    shape="sine"
-                    amplitude={amplitude}
-                    frequency={frequency}
-                    audioCtx={audioCtx}
-                    masterOut={masterOut}
-                  />
-                );
-              })
-          ) : (
-            <Oscillator
-              key="base-frequency"
-              slidePitch
-              shape={stepData.waveformShape}
-              amplitude={amplitude}
-              frequency={adjustedAudibleFrequency}
-              audioCtx={audioCtx}
-              masterOut={masterOut}
-            />
-          )
-        }
-      </AudioOutput>
-    );
-  }
+  //               return (
+  //                 <Oscillator
+  //                   key={index}
+  //                   shape="sine"
+  //                   amplitude={amplitude}
+  //                   frequency={frequency}
+  //                   audioCtx={audioCtx}
+  //                   masterOut={masterOut}
+  //                 />
+  //               );
+  //             })
+  //         ) : (
+  //           <Oscillator
+  //             key="base-frequency"
+  //             slidePitch
+  //             shape={stepData.waveformShape}
+  //             amplitude={amplitude}
+  //             frequency={adjustedAudibleFrequency}
+  //             audioCtx={audioCtx}
+  //             masterOut={masterOut}
+  //           />
+  //         )
+  //       }
+  //     </AudioOutput>
+  //   );
+  // }
 
   // renderVolumeControl() {
   //   const { currentStep, audioVolume, audioMuted } = this.state;
@@ -345,67 +347,69 @@ class IntroRoute extends PureComponent<Props, State> {
   //   );
   // }
 
-  // renderWaveformColumn(
-  //   amplitude: number,
-  //   frequency: number,
-  //   convergence: number,
-  //   phase: number,
-  //   progress: number
-  // ) {
-  //   const { currentStep, harmonicsForShape, numOfHarmonics } = this.state;
+  renderWaveformColumn(
+    amplitude: number,
+    frequency: number,
+    convergence: number,
+    phase: number,
+    progress: number
+  ) {
+    const { currentStep, harmonicsForShape, numOfHarmonics } = this.state;
 
-  //   const stepData = steps[currentStep];
+    const stepData = steps[currentStep];
+    console.log('currentstep', currentStep)
+    return (
+      <WaveformColumn isVisible={stepData.showWaveform}>
+        <IntroRouteWaveformWrapper>
+          {(width: number) => (
+            <FlexParent>
+              <WaveformWrapper>
+              {/* {currentStep == 'title' && <img style={{width: '75%'}}src={require('../../images/dude.svg')} />} */}
+              {currentStep == 'title' && <IntroFace />}
+                {/* {!stepData.useWaveformAddition && (
+                  <IntroRouteWaveform
+                    width={width}
+                    amplitude={amplitude}
+                    frequency={frequency}
+                    progress={progress}
+                    stepData={stepData}
+                  />
+                )}
 
-  //   return (
-  //     <WaveformColumn isVisible={stepData.showWaveform}>
-  //       <IntroRouteWaveformWrapper>
-  //         {(width: number) => (
-  //           <FlexParent>
-  //             <WaveformWrapper>
-  //               {!stepData.useWaveformAddition && (
-  //                 <IntroRouteWaveform
-  //                   width={width}
-  //                   amplitude={amplitude}
-  //                   frequency={frequency}
-  //                   progress={progress}
-  //                   stepData={stepData}
-  //                 />
-  //               )}
-
-  //               {stepData.useWaveformAddition && (
-  //                 <IntroRouteWaveformAddition
-  //                   type={stepData.waveformAdditionType}
-  //                   width={width}
-  //                   stepData={stepData}
-  //                   baseAmplitude={amplitude}
-  //                   baseFrequency={frequency}
-  //                   harmonicsForShape={harmonicsForShape}
-  //                   numOfHarmonics={numOfHarmonics}
-  //                   convergence={convergence}
-  //                   phase={phase}
-  //                 />
-  //               )}
-  //             </WaveformWrapper>
-  //             <WaveformControls
-  //               width={width}
-  //               amplitude={amplitude}
-  //               frequency={frequency}
-  //               numOfHarmonics={numOfHarmonics}
-  //               convergence={convergence}
-  //               phase={phase}
-  //               handleUpdateAmplitude={this.handleUpdateAmplitude}
-  //               handleUpdateFrequency={this.handleUpdateFrequency}
-  //               handleUpdateNumOfHarmonics={this.handleUpdateNumOfHarmonics}
-  //               handleUpdateConvergence={this.handleUpdateConvergence}
-  //               handleUpdatePhase={this.handleUpdatePhase}
-  //               stepData={stepData}
-  //             />
-  //           </FlexParent>
-  //         )}
-  //       </IntroRouteWaveformWrapper>
-  //     </WaveformColumn>
-  //   );
-  // }
+                {stepData.useWaveformAddition && (
+                  <IntroRouteWaveformAddition
+                    type={stepData.waveformAdditionType}
+                    width={width}
+                    stepData={stepData}
+                    baseAmplitude={amplitude}
+                    baseFrequency={frequency}
+                    harmonicsForShape={harmonicsForShape}
+                    numOfHarmonics={numOfHarmonics}
+                    convergence={convergence}
+                    phase={phase}
+                  />
+                )} */}
+              </WaveformWrapper>
+              {/* <WaveformControls
+                width={width}
+                amplitude={amplitude}
+                frequency={frequency}
+                numOfHarmonics={numOfHarmonics}
+                convergence={convergence}
+                phase={phase}
+                handleUpdateAmplitude={this.handleUpdateAmplitude}
+                handleUpdateFrequency={this.handleUpdateFrequency}
+                handleUpdateNumOfHarmonics={this.handleUpdateNumOfHarmonics}
+                handleUpdateConvergence={this.handleUpdateConvergence}
+                handleUpdatePhase={this.handleUpdatePhase}
+                stepData={stepData}
+              /> */}
+            </FlexParent>
+          )}
+        </IntroRouteWaveformWrapper>
+      </WaveformColumn>
+    );
+  }
 
   renderTutorialColumn(amplitude: number, frequency: number, progress: number) {
     const { currentStep, windowHeight } = this.state;
@@ -463,13 +467,13 @@ class IntroRoute extends PureComponent<Props, State> {
           >
             {({ amplitude, frequency, convergence, phase, progress }) => (
               <MainContent>
-                {/* {this.renderWaveformColumn(
+                {this.renderWaveformColumn(
                   amplitude,
                   frequency,
                   convergence,
                   phase,
                   progress
-                )} */}
+                )}
                 {this.renderTutorialColumn(amplitude, frequency, progress)}
               </MainContent>
             )}
