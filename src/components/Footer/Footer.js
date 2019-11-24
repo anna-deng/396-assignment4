@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import Link from '../Link';
 
 import { COLORS } from '../../constants';
 
@@ -13,8 +14,9 @@ const Footer = () => {
         <strong>© Josh Comeau, 2018 and beyond.</strong>
       </Copyright>
       <License>
-        Feel free to do whatever you want with the content on this page, just
-        please attribute it with a link back here :).
+      <Link external to="https://github.com/joshwcomeau/waveforms">
+            View the source
+      </Link>.
       </License>
 
       <CounterWrapper>

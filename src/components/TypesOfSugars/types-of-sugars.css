@@ -1,0 +1,227 @@
+path.moving-fructose {
+    animation: fructose-sucrose 2s ease-in-out 1 forwards;
+}
+
+@keyframes fructose-sucrose {
+  100%,
+  50% {
+    transform: translate(-58px, 356px);
+  }
+}
+
+circle.moving-glucose-sucrose {
+    animation: glucose-sucrose 2s ease-in-out 1 forwards;
+}
+
+@keyframes glucose-sucrose {
+  100%,
+  50% {
+    transform: translate(-314px, 356px);
+  }
+}
+
+circle.moving-glucose-maltose1 {
+    animation: glucose-maltose1 2s ease-in-out 1 forwards;
+}
+
+@keyframes glucose-maltose1 {
+  100%,
+  50% {
+    transform: translate(-70px, 356px);
+  }
+}
+
+circle.moving-glucose-maltose2 {
+    animation: glucose-maltose2 2s ease-in-out 1 forwards;
+}
+
+@keyframes glucose-maltose2 {
+  100%,
+  50% {
+    transform: translate(70px, 356px);
+  }
+}
+
+circle.moving-glucose-lactose {
+    animation: glucose-lactose 2s ease-in-out 1 forwards;
+}
+
+@keyframes glucose-lactose {
+  100%,
+  50% {
+    transform: translate(321px, 356px);
+  }
+}
+
+rect.moving-galactose {
+    animation: galactose 2s ease-in-out 1 forwards;
+}
+
+@keyframes galactose {
+  100%,
+  50% {
+    transform: translate(80px, 356px);
+  }
+}
+
+line.sucrose-line {
+    animation: sucrose-line 2s ease-in-out 1;
+}
+
+@keyframes sucrose-line {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+path.sucrose-label {
+    animation: sucrose-line 2s ease-in-out 1;
+}
+
+@keyframes sucrose-line {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+line.maltose-line {
+    animation: maltose-line 2s ease-in-out 1;
+}
+
+@keyframes maltose-line {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+path.maltose-label {
+    animation: sucrose-line 2s ease-in-out 1;
+}
+
+@keyframes sucrose-line {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+line.lactose-line {
+    animation: lactose-line 2s ease-in-out 1;
+}
+
+@keyframes lactose-line {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+path.lactose-label {
+    animation: sucrose-line 2s ease-in-out 1;
+}
+
+@keyframes sucrose-line {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+circle.moving-glucose-glycogen {
+    animation: glucose-glycogen 2s ease-in-out 1 forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes glucose-glycogen {
+  100%,
+  50% {
+    transform: translate(-513px, 721px);
+  }
+}
+
+.glycogen {
+    animation: glycogen 1.5s ease-in-out 1 forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes glycogen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+path.glycogen-label {
+    animation: glycogen 1.5s ease-in-out 1 forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes glycogen-label {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+circle.moving-glucose-starch {
+    animation: glucose-starch 2s ease-in-out 1 forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes glucose-starch {
+  100%,
+  50% {
+    transform: translate(148px, 707px);
+  }
+}
+
+.starch {
+    animation: starch 1.5s ease-in-out 1 forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes starch {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+  
+path.starch-label {
+    animation: starch 1.5s ease-in-out 1 forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+}
+
+@keyframes starch-label {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }

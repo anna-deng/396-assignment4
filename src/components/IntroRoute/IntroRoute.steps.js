@@ -32,6 +32,7 @@ export type IntroStep =
   | 'title'
   | 'intro'
   | 'types-of-sugar'
+  | 'intro-digestive'
   | 'mouth-and-esophagus'
   | 'stomach'
   | 'small-large-intestine'
@@ -43,6 +44,7 @@ export const INTRO_STEPS: Array<IntroStep> = [
   'title',
   'intro',
   'types-of-sugar',
+  'intro-digestive',
   'mouth-and-esophagus',
   'stomach',
   'small-large-intestine',
@@ -160,10 +162,10 @@ export const steps = {
     children: (
       <Fragment>
         <Paragraph>
-        Carbohydrates make up approximately half the calories consumed by the average American. 
+        Carbohydrates make up approximately <b>half</b> the calories consumed by the average American. 
         These sugars are highly complex molecules that can significantly impact the health of our bodies. 
-        These long term consequences include weight gain, impaired brain function, and lack of muscle development. 
-        Overconsumption of sugars can even lead to chronic illnesses such as diabetes.
+        These long term consequences include <b>weight gain</b>, <b>impaired brain function</b>, and <b>lack of muscle development</b>. 
+        Overconsumption of sugars can even lead to chronic illnesses such as <b>diabetes</b>.
         </Paragraph>
         <Paragraph>
         Follow this exploratory visualization to understand what happens to your body when you consume sugar!
@@ -185,11 +187,17 @@ export const steps = {
         These basic sugars make up the building blocks of 6 more complex carbohydrates: 
         sucrose, maltose, lactose, glycogen, cellulose, and starch.
         </Paragraph>
+      </Fragment>
+    ),
+  },
+  'intro-digestive': {
+    ...defaults,
+    children: (
+      <Fragment>
+        <Heading>How does our body digest these sugars?</Heading>
         <Paragraph>
-          Because nobody likes autoplaying sounds, the volume is currently
-          muted. You can control it using the "volume" widget in the{' '}
-          <PortraitOnly>top-right</PortraitOnly>
-          <LandscapeOnly>bottom-left</LandscapeOnly> corner.
+          As soon as these sugars enter our body, they go through the digestive system to be broken down and absorbed by our bodies for energy.
+          Follow the process below!
         </Paragraph>
       </Fragment>
     ),
@@ -211,24 +219,6 @@ export const steps = {
       </Fragment>
     ),
   },
-  // 'x-axis-time': {
-  //   ...defaults,
-  //   waveformOpacity: 0.5,
-  //   showXAxisLabels: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: (
-  //     <Fragment>
-  //       <Heading>Time</Heading>
-  //       <Paragraph>
-  //         The horizontal line, our X axis, represents <strong>time</strong>.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         In this case, our graph is showing a 1-second interval.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
   'stomach': {
     ...defaults,
     waveformOpacity: 0.5,
@@ -237,11 +227,10 @@ export const steps = {
     getMargin: marginFunctions.xsmall,
     children: (
       <Fragment>
-        <Heading>2. Stomach</Heading>
+        <SectionTitle>2. Stomach</SectionTitle>
         <Paragraph>
           Once food reaches the stomach, salivary enzymes (amylase) are denatured.
         </Paragraph>
-
         <Paragraph>
           From here, pancreatic amylase takes over and resumes digestion. 
           Disaccharides are broken down by intestinal brush border enzymes 
@@ -249,46 +238,6 @@ export const steps = {
           monosaccharides, the stomach must break all the poly and disaccharides 
           before passing them onto the intestines.
         </Paragraph>
-
-        {/* <Paragraph>
-          When the guitar string vibrates, it causes a chain reaction with the
-          air molecules around it; they all start vibrating as well, radiating
-          outwards.
-        </Paragraph>
-
-        <Paragraph>
-          Our Y-axis measures <strong>displacement</strong> of air molecules.
-          It's a measure of a sound wave's loudness; a lightly-strummed guitar
-          string only vibrates a little bit, so the displacement would be tiny.
-          If you pick the string, pull it back an inch, and release, the
-          string's displacement would be much higher, which would create a much
-          louder sound wave.
-        </Paragraph>
-
-        <Paragraph>
-          The waveform {waveformPosition} shows a single oscillation of a sound
-          wave. It starts by displacing the air molecule in the positive
-          direction by '1', and then in the negative direction by '-1'.
-        </Paragraph>
-
-        <Sidebar>
-          <Paragraph>
-            This is not a feature unique to guitar strings. Speakers work much
-            the same way; if you play music loud enough through a speaker, you
-            may notice its cone actually moving back and forth; the speaker
-            moves, to kick-off the chain reaction of vibrating air molecules.
-          </Paragraph>
-
-          <Paragraph>
-            Indeed, this is a fundamental feature of sound. Sound is created by
-            something vibrating, and that vibration moves through the air in the
-            form of a sound wave.
-          </Paragraph>
-
-          <Paragraph>
-            This idea is explored in much greater detail in Part 2, below.
-          </Paragraph>
-        </Sidebar> */}
       </Fragment>
     ),
   },
@@ -300,40 +249,17 @@ export const steps = {
     getMargin: marginFunctions.xsmall,
     children: (
       <Fragment>
-        <Heading>3. Small/Large Intestine</Heading>
+        <SectionTitle>3. Small/Large Intestine</SectionTitle>
         <Paragraph>
           The monosaccharides passed down from the stomach are absorbed 
           through the wall of the small intestine. The intestines release 
           glucose into the bloodstream via various mechanisms along the 
           intestinal walls.
         </Paragraph>
-
         <Paragraph>
           Some of the monosaccharide units are then transferred to the liver 
           through the portal vein.
         </Paragraph>
-
-        {/* <Paragraph>
-          Amplitude can be thought of as loudness. The more the air molecules
-          are displaced, the louder the sound seems to us.
-        </Paragraph>
-
-        <Sidebar>
-          <Paragraph>
-            "Amplitude = loudness" is a bit of an oversimplification. Loudness
-            is based on human perception.
-          </Paragraph>
-
-          <Paragraph>
-            For example, imagine someone cheering in the apartment next door.
-            The wall does a good job at dampening the displacement of air
-            molecules, and so by the time the wave reaches your ears, the
-            amplitude is probably quite low. But, because humans perceive
-            cheering as a "loud sound", it might not seem as quiet as, say, the
-            television you're watching, even if that television is displacing
-            the air more than the cheering.
-          </Paragraph>
-        </Sidebar> */}
       </Fragment>
     ),
   },
@@ -346,20 +272,17 @@ export const steps = {
     showAmplitudeSlider: true,
     children: (
       <Fragment>
+        <SectionTitle>4. Pancreas</SectionTitle>
         <Paragraph>
           Pancreas's response to digestion{' '}
-          <SliderIcon fieldName="amplitude" />{' '}
-          {/* <LandscapeOnly>below</LandscapeOnly>
-          <PortraitOnly>above</PortraitOnly> the waveform to see how changing
-          the amplitude of the waveform affects the graph. */}
-        </Paragraph>
-
-        <Paragraph>
+          {/* <SliderIcon fieldName="amplitude" />{' '} */}
           After sugar is released into the bloodstream, the pancreas releases 
           insulin to help your cells use the sugar as energy. Insulin attaches 
           to and signals cells to absorb sugar, often compared to a “key” that 
           unlocks cells to allow sugar to enter cells and be used as energy. 
           Insulin is necessary for the conversion of sugar to energy. 
+        </Paragraph>
+        <Paragraph>
           Those with type 1 diabetes are unable to produce insulin because beta 
           cells in their pancreas are damaged. In contrast, those with type 2 
           diabetes are resistant to insulin. In both cases, people with diabetes 
@@ -388,30 +311,16 @@ export const steps = {
     showCycleIndicator: true,
     children: (
       <Fragment>
-        <Heading>5. Liver assists with blood sugar level</Heading>
-
+        <SectionTitle>5. Liver</SectionTitle>
         <Paragraph>
         If your blood sugar dips too low, liver breaks down glycogen (stored in __) 
         and releases them into the bloodstream. So when you’re hungry, your liver is 
         helping you keep up your energy!
         </Paragraph>
-
         <Paragraph>
         If your blood sugar is high, liver filters some of the glucose from the 
         blood and stores them as glycogen for later usage.
         </Paragraph>
-
-        {/* <Paragraph>
-          <strong>Frequency</strong> is a measure of how many times the waveform
-          repeats in a given amount of time. The common unit of measurement for
-          frequency is the <em>Hertz</em>, abbreviated as "Hz", which represents
-          the number of repetitions per second.
-        </Paragraph>
-
-        <Paragraph>
-          Because we know that this waveform graph shows a 1-second interval, we
-          can deduce that this wave is oscillating at <strong>2Hz</strong>.
-        </Paragraph> */}
       </Fragment>
     ),
   },
@@ -423,847 +332,13 @@ export const steps = {
     frequencyOverride: 2,
     children: (
       <Fragment>
+        <SectionTitle>Conclusion</SectionTitle>
         <Paragraph>
-          conclusion
+        As they move through the digestive system, sugars are broken down, digested, and absorbed. But what happens after sugars are absorbed? Try selecting different foods below to see how consumption of each sugar might affect your body.
         </Paragraph>
       </Fragment>
     ),
   },
-  // 'frequency-with-control': {
-  //   ...defaults,
-  //   getMargin: marginFunctions.small,
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   children: (
-  //     <Fragment>
-  //       <Paragraph>
-  //         Try tweaking the frequency with the{' '}
-  //         <SliderIcon fieldName="frequency" />.
-  //       </Paragraph>
-  //       <Paragraph>
-  //         Don't forget to enable sound with the{' '}
-  //         <LandscapeOnly>
-  //           <KeyboardCharacter>M</KeyboardCharacter> key
-  //         </LandscapeOnly>
-  //         <PortraitOnly>volume control above</PortraitOnly> to see how frequency
-  //         and amplitude affect the resulting sound!
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'reading-waveform-graphs-summary': {
-  //   ...defaults,
-  //   children: (
-  //     <Fragment>
-  //       <Sidebar type="summary">
-  //         <Paragraph>
-  //           A waveform is just a schematic that helps us understand sound waves.
-  //           They measure an air molecule's displacement over time. We can adjust
-  //           the amplitude of a waveform to make it louder/quieter, and we can
-  //           adjust the frequency of a waveform to make the pitch higher/lower.
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'how-sound-works-intro': {
-  //   ...defaults,
-  //   waveformColor: COLORS.gray[700],
-  //   waveformOpacity: 0.5,
-  //   xAxisOpacity: 0.5,
-  //   yAxisOpacity: 0.5,
-  //   amplitudeOverride: 1,
-  //   frequencyOverride: 1,
-  //   children: (
-  //     <Fragment>
-  //       <SectionTitle>2. How Sound Works</SectionTitle>
-
-  //       <Paragraph>
-  //         In Part 1, we scratched the surface of how sound works, by thinking of
-  //         displacement in terms of a vibrating guitar string, and the effect it
-  //         has on sound molecules. Let's see if we can unravel this a bit more.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'how-sound-works-air-grid': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformColor: COLORS.gray[700],
-  //   waveformOpacity: 0.5,
-  //   xAxisOpacity: 0.5,
-  //   yAxisOpacity: 0.5,
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   frequencySliderMax: 2,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ amplitude, frequency, progress, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         The air around us is filled with molecules. When you play a sound out
-  //         of a speaker, the speaker vibrates really quickly. That vibration
-  //         moves through the molecules in the air, like a chain reaction, until
-  //         it reaches your ear and is processed by the brain as sound.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Imagine that each dot in this grid is an air molecule:
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="how-sound-works-air-grid"
-  //         estimatedSize={226}
-  //       >
-  //         <IntroRouteAirGrid
-  //           amplitude={amplitude}
-  //           frequency={frequency}
-  //           progress={progress}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         Each dot is oscillating back and forth by a displacement controlled by
-  //         the amplitude, and with a speed specified by the frequency.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Because this is a chain reaction, you can see the effects of the
-  //         vibrations moving from left to right, but this is a bit of an optical
-  //         illusion: the air molecules themselves aren't flying across the space,
-  //         they're just vibrating. But that vibration moves through the field.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'how-sound-works-air-grid-pt2': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformColor: COLORS.gray[700],
-  //   waveformOpacity: 0.25,
-  //   xAxisOpacity: 0.5,
-  //   yAxisOpacity: 0.5,
-  //   showYAxisIntercept: true,
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   frequencySliderMax: 2,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ amplitude, frequency, progress, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         The waveform we've been looking at {waveformPosition} shows the
-  //         oscillation of a single air molecule. Compare the blue dot added to
-  //         the waveform graph indicating the current displacement with the first
-  //         column of air molecules in the grid below:
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="how-sound-works-air-grid-pt2"
-  //         estimatedSize={226}
-  //       >
-  //         <IntroRouteAirGrid
-  //           highlightAirGridColumn
-  //           amplitude={amplitude}
-  //           frequency={frequency}
-  //           progress={progress}
-  //           direction="vertical"
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         Because our waveform graph is just a representation of the change in
-  //         displacement over time, it maps directly to what's actually happening
-  //         with the air molecules!
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         If you haven't already, try fiddling with the{' '}
-  //         <SliderIcon fieldName="amplitude" /> and{' '}
-  //         <SliderIcon fieldName="frequency" /> to see how it affects the air
-  //         molecules in the grid.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'harmonics-intro': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <SectionTitle>3. Harmonics</SectionTitle>
-  //       <Paragraph>
-  //         So far, we've been tweaking the amplitude and frequency of a waveform,
-  //         but we've been using the same <strong>waveform shape</strong> all
-  //         along.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         The shape of a waveform refers to the curve of the waveform line; in
-  //         other words, how the displacement changes over time.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         We've been looking at a <strong>sine waveform</strong>. Its origins
-  //         come from trigonometry, and it's known as the{' '}
-  //         <em>fundamental waveform</em>.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         This is because it's pure: there are no "side effects". When you play
-  //         a 440Hz sine wave, the only frequency you hear is 440Hz. Sine waves
-  //         are the "vanilla" wave; it doesn't have any bells or whistles.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         When a waveform has "side effect" frequencies, we call them{' '}
-  //         <strong>harmonics</strong>.
-  //       </Paragraph>
-
-  //       <Sidebar>
-  //         <Paragraph>
-  //           Curious to learn more about how the sine wave is derived from
-  //           mathematics? There's an awesome{' '}
-  //           <Link
-  //             external
-  //             target="_blank"
-  //             to="https://www.khanacademy.org/math/algebra2/trig-functions/graphs-of-sine-cosine-tangent-alg2/v/we-graph-domain-and-range-of-sine-function"
-  //           >
-  //             Khan Academy video
-  //           </Link>{' '}
-  //           on the subject!
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'sine-wave-graph': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   frequencyOverride: 1,
-  //   amplitudeOverride: 1,
-
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         To help us understand how harmonics work, we need a way to represent
-  //         the additional frequencies. Let's use a bar graph. Here's the sine
-  //         wave's graph:
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="sine-wave-graph"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="sine"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         This graph is pretty boring. Because the sine waveform is the{' '}
-  //         <em>fundamental</em> waveform, it doesn't have any harmonies! What you
-  //         see is what you get. A {roundTo(frequency, 1)}Hz wave plays a{' '}
-  //         {roundTo(frequency, 1)}Hz tone, and that's it.
-  //       </Paragraph>
-
-  //       <Sidebar>
-  //         <Paragraph>
-  //           If this graph doesn't quite make sense, try fiddling with the
-  //           amplitude/frequency sliders. This may help build an intuitive
-  //           understanding of what this graph represents!
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'triangle-wave': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   frequencyOverride: 1,
-  //   amplitudeOverride: 1,
-  //   waveformShape: 'triangle',
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Heading>The Triangle Waveform</Heading>
-  //       <Paragraph>Woo, our first non-sine waveform!</Paragraph>
-
-  //       <Paragraph>
-  //         It looks quite a bit like the sine, but with the curviness removed.
-  //         Instead, straight lines connect in triangle-like shapes.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         What effect does this have on the way it sounds? If you haven't
-  //         already, go ahead and enable sound using the{' '}
-  //         <LandscapeOnly>
-  //           <KeyboardCharacter>M</KeyboardCharacter> key
-  //         </LandscapeOnly>
-  //         <PortraitOnly>audio controls above</PortraitOnly>, and scroll between
-  //         this and the previous section to hear the difference.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Notice that the sound is a little "brighter"? It doesn't quite sound
-  //         so muffled? This is because of <strong>harmonics</strong>.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'triangle-wave-graph': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformShape: 'triangle',
-  //   amplitudeOverride: 1,
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         Harmonics are additional frequencies that are created by certain
-  //         waveforms. We'll learn more about why that is soon, but first, let's
-  //         graph these additional harmonics:
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="triangle-wave-graph"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="triangle"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         Harmonics are always a multiple of the root frequency. Different
-  //         waveforms have different selections, but they always follow the same
-  //         pattern:
-  //       </Paragraph>
-
-  //       <UnorderedList>
-  //         <li>Fundamental note (root frequency): {roundTo(frequency, 2)}Hz.</li>
-  //         <li>
-  //           Second harmonic (2x frequency): {roundTo(frequency * 2, 2)}Hz.
-  //         </li>
-  //         <li>Third harmonic (3x frequency): {roundTo(frequency * 3, 2)}Hz.</li>
-  //         <li>
-  //           Fourth harmonic (4x frequency): {roundTo(frequency * 4, 2)}Hz.
-  //         </li>
-  //         <li>... This pattern continues to infinity.</li>
-  //       </UnorderedList>
-
-  //       <Paragraph>
-  //         Triangle waves only have <em>odd harmonics</em>. That means they have
-  //         the root note, 3rd harmonic, 5th harmonic, 7th harmonic, and so on.
-  //         These harmonics "taper off" as you get further away from the root
-  //         frequency.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'square-wave': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   frequencyOverride: 1,
-  //   amplitudeOverride: 1,
-  //   waveformShape: 'square',
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ frequency, amplitude, progress, currentStep }) => (
-  //     <Fragment>
-  //       <Heading>The Square Waveform</Heading>
-
-  //       <Paragraph>
-  //         The square waveform is arguably the most extreme of the common
-  //         periodic waveforms. It jumps between the highest and lowest possible
-  //         values. It's a binary wave: it's either +1 or -1.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'square-wave-graph': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformShape: 'square',
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         The square waveform features exactly the same harmonics as the
-  //         triangle waveform: Every "odd" harmonic (3rd, 5th, 7th, etc). The
-  //         difference is that the square wave harmonics don't "fall off" as much
-  //         the further you get from the root frequency. Look at how much louder
-  //         the higher-frequency harmonics are for square waves:
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="square-wave-graph"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="square"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         This is plainly noticeable in the sound: squares sound much "brighter"
-  //         than triangles.
-  //       </Paragraph>
-
-  //       <Sidebar>
-  //         <Paragraph>
-  //           Unlike the previous two waveforms, a perfect square wave is
-  //           impossible; it cannot exist in nature, we can only approximate it.
-  //           Can you think of why that might be?
-  //         </Paragraph>
-  //         <Paragraph>
-  //           <RevealableAnswer>
-  //             Remember, the waveform represents the displacement of air
-  //             molecules. Molecules cannot "teleport" from the +1 position to the
-  //             -1 position. In reality, when a square wave is played through a
-  //             speaker, it causes the air to move very quickly from both
-  //             positions, but it is not instantaneous.
-  //           </RevealableAnswer>
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'sawtooth-wave': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformShape: 'sawtooth',
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Heading>The Sawtooth Waveform</Heading>
-
-  //       <Paragraph>
-  //         Finally, we have the sawtooth. Named after the blades of a saw, This
-  //         waveform exhibits the linear rise of the triangle waveform with the
-  //         hard drop of the square waveform.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         In terms of sound, it's vaguely similar to string instruments: when
-  //         you run a bow across a violin's string, the friction between the two
-  //         items causes the string to slip and catch, which causes the string to
-  //         vibrate in a sawtooth-like pattern. Of course, real instruments
-  //         produce far more complex waves than these basic waveforms!
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'sawtooth-wave-graph': {
-  //   ...defaults,
-  //   isPlaying: true,
-  //   waveformShape: 'sawtooth',
-  //   showAmplitudeSlider: true,
-  //   showFrequencySlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         In terms of harmonics, sawtooth waveforms have additional frequencies
-  //         at <em>every multiple of the root frequency</em>, unlike triangles and
-  //         squares which only have odd harmonics.
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="sawtooth-wave-graph"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="sawtooth"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-intro': {
-  //   ...defaults,
-  //   frequencyOverride: 1,
-  //   children: (
-  //     <Fragment>
-  //       <SectionTitle>4. Additive Synthesis</SectionTitle>
-  //       <Paragraph>
-  //         In the previous section, we learned about how different waveforms have
-  //         different harmonics, but it's totally unclear <em>why</em> that's the
-  //         case. For example, why does a square wave have all those extra tones
-  //         when we're still just oscillating at a single frequency?
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         To make sense of this, there's a surprising truth about waveforms:{' '}
-  //         <strong>
-  //           all of them can be built by just layering a bunch of sine waves on
-  //           top of each other.
-  //         </strong>
-  //       </Paragraph>
-
-  //       <WaveformEquation />
-
-  //       <Paragraph>
-  //         At first blush, this probably doesn't make any sense. How can sine
-  //         waves be combined to make drastically-different waveforms like square
-  //         or sawtooth?
-  //       </Paragraph>
-
-  //       <Paragraph>The answer lies in how waveform addition works.</Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-basic-add': {
-  //   ...defaults,
-  //   useWaveformAddition: true,
-  //   harmonicsForShapeOverride: 'square',
-  //   numOfHarmonicsOverride: 1,
-  //   convergenceOverride: 0,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         The waveform graph we've been looking at now shows two waves:
-  //       </Paragraph>
-
-  //       <UnorderedList>
-  //         <li>
-  //           <strong style={{ color: COLORS.primary[500] }}>
-  //             1Hz at 1 amplitude
-  //           </strong>
-  //         </li>
-  //         <li>
-  //           <strong style={{ color: COLORS.secondary[500] }}>
-  //             3Hz at 0.33 amplitude
-  //           </strong>
-  //         </li>
-  //       </UnorderedList>
-
-  //       <Paragraph>
-  //         Put another way, this second wave is 3 times as fast, but at one-third
-  //         the amplitude.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         If you've ever used audio editing software, you've seen how a full
-  //         song—which is comprised of many different instruments and
-  //         sounds—creates a single waveform. What we're looking at over there is
-  //         not a waveform yet: we have to merge the two lines to form one.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         This is known as <strong>waveform addition</strong>. Let's try to
-  //         understand it in real-world terms.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Remember, sound is just the vibration of air molecules. If you play 2
-  //         distinct tones, they both cause the air molecules to vibrate. A game
-  //         of tug-of-war has 2 people pulling on a rope, and the displacement of
-  //         the rope is the result of both people's effort.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         So, we just need to "add" the two waveforms together to get our end
-  //         result. How does the addition work? It's arithmetic: imagine the
-  //         waveform graph as a bunch of individual points. At each point, you
-  //         simply add the individual displacement values. The new set of points
-  //         is our new single waveform.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-intro-convergence': {
-  //   ...defaults,
-  //   useWaveformAddition: true,
-  //   harmonicsForShapeOverride: 'square',
-  //   numOfHarmonicsOverride: 1,
-  //   showConvergenceSlider: true,
-  //   getMargin: marginFunctions.small,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         Use the new <strong>Convergence</strong> slider to watch as the two
-  //         lines are added together.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Notice how it kinda looks like a square wave, if you squint?
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-intro-num-of-harmonics': {
-  //   ...defaults,
-  //   useWaveformAddition: true,
-  //   harmonicsForShapeOverride: 'square',
-  //   showConvergenceSlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         You might be wondering where the values for that first harmonic came
-  //         from. Why did we choose these waveforms specifically?
-  //       </Paragraph>
-
-  //       <UnorderedList>
-  //         <li>
-  //           <strong style={{ color: COLORS.primary[500] }}>
-  //             1Hz at 1 amplitude
-  //           </strong>
-  //         </li>
-  //         <li>
-  //           <strong style={{ color: COLORS.secondary[500] }}>
-  //             3Hz at 0.33 amplitude
-  //           </strong>
-  //         </li>
-  //       </UnorderedList>
-
-  //       <Paragraph>
-  //         The answer is that we <em>reverse engineered</em> the square waveform.
-  //         Remember this chart, showing the harmonics for a square wave?
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="additive-synthesis-intro-num-of-harmonics"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="square"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         The two waves we're graphing are the 2 first waves in this chart!
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-harmonics-tie-in': {
-  //   ...defaults,
-  //   useWaveformAddition: true,
-  //   harmonicsForShapeOverride: 'square',
-  //   numOfHarmonicsOverride: 1,
-  //   showConvergenceSlider: true,
-  //   showNumOfHarmonicsSlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         The more harmonics we add from this chart, the more our waveform
-  //         starts to look like a square wave. Use the new{' '}
-  //         <SliderIcon fieldName="# of Harmonics" /> to change the number, and
-  //         see how it affects the converged line.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-phase': {
-  //   ...defaults,
-  //   frequencyOverride: 2,
-  //   amplitudeOverride: 0.75,
-  //   useWaveformAddition: true,
-  //   waveformAdditionType: 'phase',
-  //   showPhaseSlider: true,
-  //   convergenceOverride: 0,
-  //   phaseOverride: 36,
-  //   showConvergenceSlider: true,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Heading>Phase</Heading>
-  //       <Paragraph>
-  //         Something counter-intuitive about waveform addition is that it doesn't
-  //         always make the resulting sound louder.
-  //       </Paragraph>
-  //       <Paragraph>
-  //         To demonstrate this more clearly, first we have to learn about another
-  //         waveform property: <strong>phase</strong>.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Simply put, phase is the amount of offset applied to a wave, measured
-  //         in degrees. If a wave is 180 degrees out of phase, for example, that
-  //         means it's delayed by 50% of its period.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Our waveform graph on the right has been updated to show two identical
-  //         waves in terms of amplitude and frequency. Try adjusting the new{' '}
-  //         <SliderIcon fieldName="phase" /> to see how phase affects the second
-  //         waveform, relative to the first.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-noise-cancelling': {
-  //   ...defaults,
-  //   useWaveformAddition: true,
-  //   waveformAdditionType: 'phase',
-  //   showPhaseSlider: true,
-  //   convergenceOverride: 0,
-  //   showConvergenceSlider: true,
-  //   getMargin: marginFunctions.xsmall,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Paragraph>
-  //         Try adjusting the <SliderIcon fieldName="convergence" /> to see how
-  //         the phase of a waveform affects how loud the resulting wave is.
-  //       </Paragraph>
-
-  //       <Sidebar>
-  //         <Paragraph>
-  //           Incidentally, this is exactly how noise-cancelling headphones work!
-  //           They record the ambient noise around the headphones, offset its
-  //           phase by 180 degrees, and mix it in with the sound coming out of the
-  //           headphone's speakers. This "cancels out" the background noise, just
-  //           as the 180-degree sine wave cancels out the original sine wave.
-  //         </Paragraph>
-  //         <Paragraph>
-  //           This process is imperfect—real noise isn't as simple or consistent
-  //           as sine waves, and there's latency between the sound being recorded
-  //           and played back, so it generally works better on lower-frequency
-  //           noise where the latency matters less—but it can be a remarkable
-  //           effect in areas with consistent low-frequency noise, like airplanes
-  //           or subways.
-  //         </Paragraph>
-  //       </Sidebar>
-  //     </Fragment>
-  //   ),
-  // },
-  // 'additive-synthesis-music': {
-  //   ...defaults,
-  //   frequencyOverride: 2.04375,
-  //   useWaveformAddition: true,
-  //   waveformAdditionType: 'chord',
-  //   showConvergenceSlider: true,
-  //   showFrequencySlider: true,
-  //   convergenceOverride: 0,
-  //   phaseOverride: 0,
-  //   children: ({ frequency, amplitude, currentStep }) => (
-  //     <Fragment>
-  //       <Heading>Chords</Heading>
-  //       <Paragraph>
-  //         Another way to think of waveform addition, perhaps a more concrete
-  //         way, is to think musically. After all, when you play a chord on the
-  //         piano, you're really just adding 3 waves together!
-  //       </Paragraph>
-  //       <Paragraph>
-  //         The difference is the scale. With harmonics, the additional "notes"
-  //         are all multiples of the root frequency, whereas western music divides
-  //         an octave into 12 intervals.
-  //       </Paragraph>
-  //       <Paragraph>
-  //         Just for fun, here's what a C Major chord looks like, built out of 3
-  //         sine waves.
-  //       </Paragraph>
-
-  //       <MountWhenVisible
-  //         currentStep={currentStep}
-  //         belongsToStep="additive-synthesis-music"
-  //         estimatedSize={390}
-  //       >
-  //         <FrequencyGraph
-  //           shape="sine"
-  //           type="chord"
-  //           baseFrequency={frequency}
-  //           baseAmplitude={amplitude}
-  //         />
-  //       </MountWhenVisible>
-
-  //       <Paragraph>
-  //         A fundamental truth about sound is that there are only 2 variables:{' '}
-  //         <strong>time</strong> and <strong>displacement</strong>. We can create
-  //         any sound imaginable by simply displacing air molecules by the right
-  //         amount at the right time.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Both the harmonics associated with certain waveforms and the
-  //         additional waves needed to form chords are just the math needed to
-  //         produce the right displacement at the right time.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
-  // conclusion: {
-  //   ...defaults,
-  //   frequencyOverride: 1,
-  //   amplitudeOverride: 0.75,
-  //   showVolumeControls: false,
-  //   isPlaying: true,
-  //   children: (
-  //     <Fragment>
-  //       <SectionTitle>In Conclusion</SectionTitle>
-  //       <Paragraph>
-  //         An audio wave is the vibration of air molecules, which is how sound
-  //         travels. A waveform describes a wave by graphing how an air molecule
-  //         is displaced, over time.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Amplitude is the strength of a wave's effect; the higher the
-  //         amplitude, the more the air molecules are displaced. This also
-  //         translates into loudness for the human ear; increasing a wave's
-  //         amplitude will increase how loud it seems to us.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         The most common periodic waveforms are the sine, triangle, square, and
-  //         sawtooth.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         These waveforms are said to be periodic because the wave they
-  //         represent can be repeated to produce a constant tone. The faster the
-  //         wave repeats, the higher the pitch of the sound.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         Different waveforms have different harmonics. A harmonic is an
-  //         additional frequency created by the wave. The sine waveform is unique
-  //         in that it doesn't have any additional harmonics; it is the
-  //         fundamental waveform.
-  //       </Paragraph>
-
-  //       <Paragraph>
-  //         To understand why certain waveforms have harmonics, we can attack the
-  //         problem from the opposite end. Because the sine waveform is the
-  //         fundamental waveform, it can be used to approximate all the other
-  //         periodic waveforms, by just adding additional sine waves at the
-  //         appropriate harmonics, and at the appropriate amplitude levels. In
-  //         essence, a square wave can be thought of as an infinite number of sine
-  //         waves, all happening at very specific frequencies and amplitudes.
-  //       </Paragraph>
-  //     </Fragment>
-  //   ),
-  // },
   over: {
     ...defaults,
     showWaveform: false,

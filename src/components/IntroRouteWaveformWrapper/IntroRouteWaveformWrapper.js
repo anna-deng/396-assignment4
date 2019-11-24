@@ -27,7 +27,7 @@ const IntroRouteWaveformWrapper = ({ children }: Props) => (
 
 const InitialSpacer = styled.div`
   @media (orientation: landscape) {
-    height: 175px;
+    height: 150px;
   }
 `;
 

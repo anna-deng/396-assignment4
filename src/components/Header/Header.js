@@ -7,8 +7,8 @@ import { COLORS, BREAKPOINTS } from '../../constants';
 const Header = () => {
   return (
     <HeaderElem>
-      <TitleIntro>How do our bodies digest</TitleIntro>
-      <Title>Sugar?</Title>
+      <Title>How do our bodies digest sugar?</Title>
+      <TitleIntro>by Anna Deng, Keren Park, and Meera Ramakrishnan</TitleIntro>
     </HeaderElem>
   );
 };
@@ -16,13 +16,13 @@ const Header = () => {
 const HeaderElem = styled.header`
   position: relative;
   height: 164px;
-  margin-top: 196px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media ${BREAKPOINTS.lgMin} {
-    margin-top: 222px;
+    margin-top: 250px;
   }
 `;
 
@@ -54,7 +54,8 @@ const TitleIntro = styled.h3`
       There is a clever way to do this using 'calc', but the simple way is
       clearer.
     */
-    font-size: 50px;
+   margin-top: 26px;
+    font-size: 36px;
   }
 `;
 
@@ -81,7 +82,8 @@ const Title = styled.h1`
       There is a clever way to do this using 'calc', but the simple way is
       clearer.
     */
-    font-size: 92px;
+    margin-top: 90px;
+    font-size: 72px;
   }
 `;
 

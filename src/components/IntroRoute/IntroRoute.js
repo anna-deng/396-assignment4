@@ -22,6 +22,9 @@ import FadeTransition from '../FadeTransition';
 import WaveformControls from '../WaveformControls';
 
 import IntroFace from '../IntroFace';
+import TypesOfSugars from '../TypesOfSugars';
+import MouthAndEsophagus from '../MouthAndEsophagus';
+// import Stomach from '../Stomach';
 
 import { steps, stepsArray, INTRO_STEPS } from './IntroRoute.steps';
 import { getActiveSectionInWindow } from './IntroRoute.helpers';
@@ -366,6 +369,10 @@ class IntroRoute extends PureComponent<Props, State> {
               <WaveformWrapper>
               {/* {currentStep == 'title' && <img style={{width: '75%'}}src={require('../../images/dude.svg')} />} */}
               {currentStep == 'title' && <IntroFace />}
+              {currentStep == 'types-of-sugar' && <TypesOfSugars />}
+              {currentStep == 'mouth-and-esophagus' && <MouthAndEsophagus />}
+              {/* {currentStep == 'stomach' && <Stomach />} */}
+
                 {/* {!stepData.useWaveformAddition && (
                   <IntroRouteWaveform
                     width={width}

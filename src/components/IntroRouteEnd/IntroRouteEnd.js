@@ -16,55 +16,11 @@ const IntroRouteEnd = () => {
       <MaxWidthWrapper>
         <Spacer size={128} />
         <CongratsHeading>
-          <LetterSquash>W</LetterSquash>oohoo, you finished it!
+          How do different sugars affect your body differently?
         </CongratsHeading>
         <LimitedParagraph>
-          Thanks so much for playing. I hope it was worthwhile and educational!
+          blah blhablhalbhlahblhalbhlahblha
         </LimitedParagraph>
-
-        <LimitedParagraph>
-          Let me know what you think{' '}
-          <Link external to="https://twitter.com/JoshWComeau">
-            on Twitter
-          </Link>{' '}
-          or{' '}
-          <Link external to="mailto:joshwcomeau@gmail.com">
-            by email
-          </Link>. I'm especially keen to hear if you have suggestions for other
-          audio concepts you'd like explained this way!
-        </LimitedParagraph>
-
-        <LimitedParagraph>
-          This project was created with React.{' '}
-          <Link external to="https://github.com/joshwcomeau/waveforms">
-            View the source
-          </Link>.
-        </LimitedParagraph>
-
-        <LimitedParagraph>
-          This project was heavily inspired by R2D3's amazing{' '}
-          <Link
-            external
-            to="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/"
-          >
-            visual intro to machine learning
-          </Link>.
-        </LimitedParagraph>
-
-        <LimitedParagraph />
-
-        <LimitedParagraph>
-          Warm thanks to Pat McNeil, instructor at{' '}
-          <Link external to="http://www.vaniercollege.qc.ca/audio/">
-            Vanier College
-          </Link>, who taught me all this stuff originally, and Matt
-          Dunn-Rankin, co-worker at{' '}
-          <Link external to="https://www.khanacademy.org/">
-            Khan Academy
-          </Link>. Pat's deep audio expertise and Matt's keen eye for pedagogy
-          greatly improved this exploration.
-        </LimitedParagraph>
-
         <Spacer size={172} />
       </MaxWidthWrapper>
     </Wrapper>
@@ -73,7 +29,7 @@ const IntroRouteEnd = () => {
 
 const Wrapper = styled.div`
   margin-top: 64px;
-  background: ${COLORS.gray[300]};
+  background: ${COLORS.gray[100]};
 `;
 
 const CongratsHeading = styled(Heading)`
@@ -88,7 +44,7 @@ const CongratsHeading = styled(Heading)`
   }
 
   @media ${BREAKPOINTS.mdMin} {
-    font-size: 72px;
+    font-size: 56px;
   }
 `;
 
