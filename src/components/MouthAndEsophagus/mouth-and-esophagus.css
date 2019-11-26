@@ -1,0 +1,129 @@
+.donut {
+    transform: scale(.6) translate(100px, 690px);
+    animation: donut 4s ease-in-out 1 backwards;
+    opacity: 0;
+}
+
+@keyframes donut {
+  100% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.6) translate(420px, 690px);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(.6) translate(575px, 650px);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(.6) translate(500px, 670px);
+    opacity: 1;
+  }
+  85% {
+    transform: scale(.6) translate(575px, 670px);
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+}
+
+.amylase {
+    transform: scale(.2) translate(2900px, 3000px);
+    animation: amylase 4s ease-in-out 1 none;
+    opacity: 0;
+}
+
+@keyframes amylase {
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+      }
+    50% {
+      transform: scale(.2) translate(2900px, 3000px);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(.2) translate(2100px, 3100px);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(.2) translate(2300px, 3200px);
+      opacity: 1;
+    }
+    85% {
+      transform: scale(.2) translate(2100px, 3100px);
+      opacity: 1;
+    }
+    90%{
+        opacity: 0;
+      }
+  }
+
+.poly {
+    transform: scale(.25) translate(2200px, 2700px);
+    animation: poly 4s ease-in-out 1;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+@keyframes poly {
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+      }
+    30% {
+      transform: scale(.25) translate(2700px, 3200px);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(.25) translate(3200px, 3950px);
+      opacity: 1;
+    }
+    90% {
+      transform: scale(.25) translate(3300px, 4200px);
+      opacity: 1;
+    }
+    95%{
+        opacity: 0;
+      }
+  }
+
+.di {
+    transform: scale(.15) translate(3000px, 4300px);
+    animation: di 4s ease-in-out 1;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+@keyframes di {
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+      }
+    30% {
+      transform: scale(.15) translate(3800px, 5200px);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(.15) translate(4500px, 6300px);
+      opacity: 1;
+    }
+    90% {
+      transform: scale(.15) translate(4600px, 6800px);
+      opacity: 1;
+    }
+    95%{
+        opacity: 0;
+      }
+  }

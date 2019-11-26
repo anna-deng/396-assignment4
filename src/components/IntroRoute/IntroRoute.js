@@ -24,7 +24,7 @@ import WaveformControls from '../WaveformControls';
 import IntroFace from '../IntroFace';
 import TypesOfSugars from '../TypesOfSugars';
 import MouthAndEsophagus from '../MouthAndEsophagus';
-// import Stomach from '../Stomach';
+import Stomach from '../Stomach';
 
 import { steps, stepsArray, INTRO_STEPS } from './IntroRoute.steps';
 import { getActiveSectionInWindow } from './IntroRoute.helpers';
@@ -371,7 +371,7 @@ class IntroRoute extends PureComponent<Props, State> {
               {currentStep == 'title' && <IntroFace />}
               {currentStep == 'types-of-sugar' && <TypesOfSugars />}
               {currentStep == 'mouth-and-esophagus' && <MouthAndEsophagus />}
-              {/* {currentStep == 'stomach' && <Stomach />} */}
+              {currentStep == 'stomach' && <Stomach />}
 
                 {/* {!stepData.useWaveformAddition && (
                   <IntroRouteWaveform

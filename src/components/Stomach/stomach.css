@@ -1,0 +1,44 @@
+
+.poly-stomach {
+    transform: scale(.2) translate(450px, 50px);
+    animation: poly-stomach 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes poly-stomach {
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+      }
+    50% {
+      transform: scale(.2) translate(1400px, 1400px);
+      opacity: 1;
+    }
+    60%{
+        opacity: 0;
+      }
+  }
+
+.di-stomach {
+    transform: scale(.1) translate(450px, 50px);
+    animation: di-stomach 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes di-stomach {
+    100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+      }
+    50% {
+      transform: scale(.1) translate(2600px, 2200px);
+      opacity: 1;
+    }
+    60%{
+        opacity: 0;
+      }
+  }
