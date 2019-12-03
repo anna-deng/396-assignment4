@@ -1,9 +1,18 @@
 import React from 'react';
 import './mouth-and-esophagus.css';
+import $ from 'jquery';
+
+const replayMouthEsophagus = () => {
+    var elm = $("#mouth-esophagus");
+    var newone = elm.clone(true);
+    elm.before(newone);
+    elm.remove();
+}
 
 const MouthAndEsophagus = () => {
     return (
-        <svg class='mouth-and-esophagus-container' style={{marginLeft: '-200px'}} width="800" height="728" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div>
+        <svg id="mouth-esophagus" class='mouth-and-esophagus-container' style={{marginLeft: '-200px', marginTop: '-50px'}} width="714" height="650" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="1440" height="1322" fill="#FAFAFA"/>
             <ellipse cx="785.599" cy="936.818" rx="68.3295" ry="32.8184" transform="rotate(-15.4323 785.599 936.818)" fill="#B4536B"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M851.903 919.157L718.805 949.956L755.608 1109H895.833L851.903 919.157Z" fill="#B4536B"/>
@@ -67,6 +76,8 @@ const MouthAndEsophagus = () => {
                 <ellipse cx="523.697" cy="314.361" rx="13.5" ry="27" transform="rotate(-140 523.697 314.361)" fill="white"/>
             </g>
         </svg>
+        <button id="mouth-esophagus-replay-btn" onClick={() => replayMouthEsophagus(this)}>Replay</button>
+    </div>
     );
 }
 

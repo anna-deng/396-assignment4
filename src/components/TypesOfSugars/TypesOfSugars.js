@@ -112,7 +112,7 @@ const TypesOfSugars = () => {
             </filter>
             </defs>
         </svg>
-        <button id="sugar-replay-btn" onClick={() => replaySugars(this)}>Replay</button>
+        <button id="sugar-replay-btn" onClick={() => replaySugars()}>Replay</button>
         </div>
     );
 }
