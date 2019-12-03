@@ -1,9 +1,18 @@
 import React from 'react';
 import './types-of-sugars.css';
+import $ from 'jquery';
+
+const replaySugars = () => {
+    var elm = $("#sugars");
+    var newone = elm.clone(true);
+    elm.before(newone);
+    elm.remove();
+}
 
 const TypesOfSugars = () => {
     return (
-        <svg style={{marginLeft: '-100px'}} width="600" height="650" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div>
+        <svg id="sugars" style={{marginLeft: '-100px'}} width="600" height="545" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="1440" height="1322" fill="#FAFAFA"/>
             <g filter="url(#filter0_d)">
             <rect x="124" y="46" width="1192" height="307" rx="50" fill="#FCFCFC"/>
@@ -103,6 +112,8 @@ const TypesOfSugars = () => {
             </filter>
             </defs>
         </svg>
+        <button id="sugar-replay-btn" onClick={() => replaySugars(this)}>Replay</button>
+        </div>
     );
 }
 
