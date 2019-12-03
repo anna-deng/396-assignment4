@@ -1,0 +1,339 @@
+.mono1 {
+    animation: intestmono1 3s ease-in-out 1 forwards;
+  }
+  
+  @keyframes intestmono1 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(-22px, 140px);
+        }
+    50%, 60%, 70% {
+      transform: translate(32px, 418px);
+      }
+    80%, 90% {
+      transform: translate(32px, 650px);
+      }
+    92%, 97% {
+        transform: translate(-100px, 850px);
+    }
+    98% {
+      transform: translate(-100px, 850px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(-100px, 850px);
+      opacity: 0;
+    }
+  }
+
+  .mono2 {
+    animation: intestmono2 3s ease-in-out 1 forwards;
+    animation-delay: 2s;
+  }
+  
+  @keyframes intestmono2 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(600px, 70px);
+    }
+    50%, 60%, 70% {
+      transform: translate(650px, 348px);
+      }
+    80%, 90% {
+      transform: translate(650px, 580px);
+      }
+    92%, 97% {
+        transform: translate(518px, 780px);
+    }
+    98% {
+      transform: translate(518px, 780px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(518px, 780px);
+      opacity: 0;
+    }
+  }
+
+  .mono3 {
+    animation: intestmono3 3s ease-in-out 1 forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes intestmono3 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(-379px, -12px);
+    }
+    50%, 60%, 70% {
+      transform: translate(-495px, 235px);
+      }
+    80%, 90% {
+      transform: translate(-475px, 475px);
+      }
+    92%, 97% {
+        transform: translate(-335px, 675px);
+    }
+    98% {
+      transform: translate(-335px, 675px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(-335px, 675px);
+      opacity: 0;
+    }
+  }
+
+  .mono4 {
+    animation: intestmono4 3s ease-in-out 1 forwards;
+    animation-delay: 3s;
+  }
+  
+  @keyframes intestmono4 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(430px, 275px);
+    }
+    50%, 60%, 70% {
+      transform: translate(315px, 525px);
+      }
+    80%, 90% {
+      transform: translate(325px, 750px);
+      }
+    92%, 97% {
+        transform: translate(475px, 960px);
+    }
+    98% {
+      transform: translate(475px, 960px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(475px, 960px);
+      opacity: 0;
+    }
+  }
+
+  .mono5 {
+    animation: intestmono5 3s ease-in-out 1 forwards;
+    animation-delay: 4s;
+  }
+  
+  @keyframes intestmono5 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(235px, -20px);
+    }
+    50%, 60%, 70% {
+      transform: translate(285px, 255px);
+      }
+    80%, 90% {
+      transform: translate(300px, 475px);
+      }
+    92%, 97% {
+        transform: translate(140px, 690px);
+    }
+    98% {
+      transform: translate(140px, 690px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(140px, 690px);
+      opacity: 0;
+    }
+  }
+
+  .mono6 {
+    animation: intestmono6 3s ease-in-out 1 forwards;
+    animation-delay: 6s;
+  }
+  
+  @keyframes intestmono6 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(418px, 0px);
+    }
+    50%, 60%, 70% {
+      transform: translate(470px, 270px);
+      }
+    80%, 90% {
+      transform: translate(500px, 490px);
+      }
+    92%, 97% {
+        transform: translate(330px, 705px);
+    }
+    98% {
+      transform: translate(330px, 705px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(330px, 705px);
+      opacity: 0;
+    }
+  }
+
+  .mono7 {
+    animation: intestmono7 3s ease-in-out 1 forwards;
+    animation-delay: 5s;
+  }
+  
+  @keyframes intestmono7 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(160px, 255px);
+    }
+    50%, 60%, 70% {
+      transform: translate(40px, 510px);
+      }
+    80%, 90% {
+      transform: translate(25px, 725px);
+      }
+    92%, 97% {
+        transform: translate(200px, 945px);
+    }
+    98% {
+      transform: translate(200px, 945px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(200px, 945px);
+      opacity: 0;
+    }
+  }
+
+  .mono8 {
+    animation: intestmono8 3s ease-in-out 1 forwards;
+    animation-delay: 7s;
+  }
+  
+  @keyframes intestmono8 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(-10px, 110px);
+    }
+    50%, 60%, 70% {
+      transform: translate(-125px, 360px);
+      }
+    80%, 90% {
+      transform: translate(-150px, 575px);
+      }
+    92%, 97% {
+        transform: translate(30px, 800px);
+    }
+    98% {
+      transform: translate(30px, 800px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(30px, 800px);
+      opacity: 0;
+    }
+  }
+
+  .mono9 {
+    animation: intestmono9 3s ease-in-out 1 forwards;
+    animation-delay: 8s;
+  }
+  
+  @keyframes intestmono9 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(-580px, 200px);
+    }
+    50%, 60%, 70% {
+      transform: translate(-529px, 470px);
+      }
+    80%, 90% {
+      transform: translate(-500px, 700px);
+      }
+    92%, 97% {
+        transform: translate(-675px, 905px);
+    }
+    98% {
+      transform: translate(-675px, 905px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(-675px, 905px);
+      opacity: 0;
+    }
+  }
+
+  .mono10 {
+    animation: intestmono10 3s ease-in-out 1 forwards;
+    animation-delay: 9s;
+  }
+  
+  @keyframes intestmono10 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(205px, 95px);
+    }
+    50%, 60%, 70% {
+      transform: translate(258px, 365px);
+      }
+    80%, 90% {
+      transform: translate(300px, 575px);
+      }
+    92%, 97% {
+        transform: translate(120px, 800px);
+    }
+    98% {
+      transform: translate(120px, 800px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(120px, 800px);
+      opacity: 0;
+    }
+  }
+
+  .mono11 {
+    animation: intestmono11 3s ease-in-out 1 forwards;
+    animation-delay: 10s;
+  }
+  
+  @keyframes intestmono11 {
+    100% {
+      opacity: 0;
+    }
+    10%, 20%, 30% {
+        transform: translate(750px, 160px);
+    }
+    50%, 60%, 70% {
+      transform: translate(635px, 410px);
+      }
+    80%, 90% {
+      transform: translate(600px, 625px);
+      }
+    92%, 97% {
+        transform: translate(800px, 850px);
+    }
+    98% {
+      transform: translate(800px, 850px);
+      opacity: 1;
+    }
+    99% {
+      transform: translate(800px, 850px);
+      opacity: 0;
+    }
+  }

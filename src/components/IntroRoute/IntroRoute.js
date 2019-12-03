@@ -25,6 +25,10 @@ import IntroFace from '../IntroFace';
 import TypesOfSugars from '../TypesOfSugars';
 import MouthAndEsophagus from '../MouthAndEsophagus';
 import Stomach from '../Stomach';
+import Intestines from '../Intestines';
+import Pancreas from '../Pancreas';
+import Liver from '../Liver';
+
 
 import { steps, stepsArray, INTRO_STEPS } from './IntroRoute.steps';
 import { getActiveSectionInWindow } from './IntroRoute.helpers';
@@ -368,10 +372,14 @@ class IntroRoute extends PureComponent<Props, State> {
             <FlexParent>
               <WaveformWrapper>
               {/* {currentStep == 'title' && <img style={{width: '75%'}}src={require('../../images/dude.svg')} />} */}
-              {currentStep == 'title' && <IntroFace />}
-              {currentStep == 'types-of-sugar' && <TypesOfSugars />}
+              {(currentStep == 'title' || currentStep == 'intro') && <IntroFace />}
+              {(currentStep == 'types-of-sugar'|| currentStep == 'intro-digestive') && <TypesOfSugars />}
               {currentStep == 'mouth-and-esophagus' && <MouthAndEsophagus />}
               {currentStep == 'stomach' && <Stomach />}
+              {currentStep == 'small-large-intestine' && <Intestines />}
+              {currentStep == 'pancreas' && <Pancreas />}
+              {currentStep == 'liver' && <Liver />}
+
 
                 {/* {!stepData.useWaveformAddition && (
                   <IntroRouteWaveform

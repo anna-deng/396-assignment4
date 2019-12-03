@@ -3,7 +3,7 @@ import './mouth-and-esophagus.css';
 
 const MouthAndEsophagus = () => {
     return (
-        <svg style={{marginLeft: '-200px'}} width="800" height="728" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class='mouth-and-esophagus-container' style={{marginLeft: '-200px'}} width="800" height="728" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="1440" height="1322" fill="#FAFAFA"/>
             <ellipse cx="785.599" cy="936.818" rx="68.3295" ry="32.8184" transform="rotate(-15.4323 785.599 936.818)" fill="#B4536B"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M851.903 919.157L718.805 949.956L755.608 1109H895.833L851.903 919.157Z" fill="#B4536B"/>

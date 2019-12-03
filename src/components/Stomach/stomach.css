@@ -1,7 +1,7 @@
 
 .poly-stomach {
     transform: scale(.2) translate(450px, 50px);
-    animation: poly-stomach 4s ease-in-out infinite;
+    animation: poly-stomach 4s ease-in-out 1;
     opacity: 0;
 }
 
@@ -13,17 +13,29 @@
         opacity: 1;
       }
     50% {
+      transform: scale(.2) translate(1600px, 1600px);
+      opacity: 1;
+    }
+    70% {
       transform: scale(.2) translate(1400px, 1400px);
       opacity: 1;
     }
-    60%{
+    88% {
+      transform: scale(.2) translate(1500px, 1500px);
+      opacity: 1;
+    }
+    97% {
+      transform: scale(.2) translate(1600px, 1600px);
+      opacity: 1;
+    }
+    98%{
         opacity: 0;
       }
   }
 
 .di-stomach {
     transform: scale(.1) translate(450px, 50px);
-    animation: di-stomach 4s ease-in-out infinite;
+    animation: di-stomach 4s ease-in-out 1;
     opacity: 0;
 }
 
@@ -38,7 +50,203 @@
       transform: scale(.1) translate(2600px, 2200px);
       opacity: 1;
     }
-    60%{
+    70% {
+      transform: scale(.1) translate(2500px, 2500px);
+      opacity: 1;
+    }
+    88% {
+      transform: scale(.1) translate(2700px, 2700px);
+      opacity: 1;
+    }
+    97% {
+      transform: scale(.1) translate(2600px, 2200px);
+      opacity: 1;
+    }
+    98%{
         opacity: 0;
-      }
+    }
   }
+ 
+.stomach-amylase {
+    transform: scale(.5) translate(350px, 350px);
+    animation: stomach-amylase 3s ease-in-out infinite;
+}
+
+@keyframes stomach-amylase {
+    100% {
+      transform: scale(.5) translate(350px, 350px) rotate(0deg);
+    }
+    25% {
+        transform: scale(.5) translate(350px, 350px) rotate(3deg);
+    }
+    40% {
+        transform: scale(.5) translate(350px, 350px) rotate(5deg);
+    }
+    50% {
+      transform: scale(.5) translate(350px, 350px) rotate(0deg);
+    }
+    60% {
+        transform: scale(.5) translate(350px, 350px) rotate(-5deg);
+    }
+    75% {
+        transform: scale(.5) translate(350px, 350px) rotate(-3deg);
+    }
+    99% {
+        transform: scale(.5) translate(350px, 350px) rotate(0deg);
+    }
+  }
+
+.monos {
+    transform: scale(.1) translate(2500px, 2500px);
+    animation: monos 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+@keyframes monos {
+  100%, 
+  50% {
+      opacity: 1;
+    }
+}
+
+.first-mono {
+  animation: mono1 4s ease-in-out 1 forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes mono1 {
+  100% {
+    opacity: 0;
+  }
+  35% {
+      transform: translate(-2500px, 1200px);
+      }
+  50% {
+    transform: translate(-2700px, 1900px);
+    }
+  75% {
+    transform: translate(-2400px, 3050px);
+    }
+  98% {
+    transform: translate(-2400px, 3050px);
+    opacity: 1;
+  }
+  99% {
+    transform: translate(-2400px, 3050px);
+    opacity: 0;
+  }
+}
+
+
+.second-mono {
+  animation: mono2 4s ease-in-out 1 forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes mono2 {
+  100% {
+    opacity: 0;
+  }
+  35% {
+      transform: translate(-2100px, 1200px);
+      }
+  50% {
+    transform: translate(-2300px, 1900px);
+    }
+  75% {
+    transform: translate(-2000px, 3100px);
+    }
+  98% {
+    transform: translate(-2000px, 3100px);
+    opacity: 1;
+  }
+  99% {
+    transform: translate(-2000px, 3100px);
+    opacity: 0;
+  }
+}
+
+.third-mono {
+  animation: mono3 4s ease-in-out 1 forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes mono3 {
+  100% {
+    opacity: 0;
+  }
+  35% {
+      transform: translate(-2900px, 1300px);
+      }
+  50% {
+    transform: translate(-3200px, 2000px);
+    }
+  75% {
+    transform: translate(-2900px, 3200px);
+    }
+  98% {
+    transform: translate(-2900px, 3200px);
+    opacity: 1;
+  }
+  99% {
+    transform: translate(-2900px, 3200px);
+    opacity: 0;
+  }
+}
+
+.fourth-mono {
+  animation: mono4 4s ease-in-out 1 forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes mono4 {
+  100% {
+    opacity: 0;
+  }
+  35% {
+      transform: translate(-2400px, 1200px);
+      }
+  50% {
+    transform: translate(-2400px, 1900px);
+    }
+  75% {
+    transform: translate(-2200px, 2700px);
+    }
+  98% {
+    transform: translate(-2200px, 2700px);
+    opacity: 1;
+  }
+  99% {
+    transform: translate(-2200px, 2700px);
+    opacity: 0;
+  }
+}
+
+.fifth-mono {
+  animation: mono5 4s ease-in-out 1 forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes mono5 {
+  100% {
+    opacity: 0;
+  }
+  35% {
+      transform: translate(-3000px, 1300px);
+      }
+  50% {
+    transform: translate(-3000px, 2000px);
+    }
+  75% {
+    transform: translate(-2700px, 2800px);
+    }
+  98% {
+    transform: translate(-2700px, 2800px);
+    opacity: 1;
+  }
+  99% {
+    transform: translate(-2700px, 2800px);
+    opacity: 0;
+  }
+}
