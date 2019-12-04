@@ -32,7 +32,7 @@ const App = () => {
           <Route path="/" component={IntroRoute} />
           <Redirect from="/" to="/" />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Fragment>
     </Router>
   );

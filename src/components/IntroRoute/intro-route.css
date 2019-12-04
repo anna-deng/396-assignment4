@@ -21,3 +21,40 @@
 .beta-icon {
     transform: scale(7) translate(-850px, -760px);
 }
+
+.outer-container {
+    display: flex;
+}
+
+.end-left {
+    margin-left: -100px;
+    width: 0;
+}
+
+.end-right {
+    margin-left: 200px;
+}
+
+.cereal-caption {
+    transform: scale(2.25) translate(100px, 60px)
+}
+
+.cereal {
+    transform: scale(1) translate(-200px, 0px)
+}
+
+.cheese {
+    transform: scale(.75) translate(-700px, -200px);
+}
+
+.cheese-caption {
+    transform: scale(6) translate(110px, 30px);
+}
+
+.cupcake {
+    transform: translate(-200px, 0px);
+}
+
+.cupcake-caption {
+    transform: scale(1.6) translate(53px, 50px);
+}
