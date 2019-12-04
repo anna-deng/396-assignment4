@@ -14,6 +14,8 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  position: absolute;
+  bottom: -70px;
   }
 
 #sugar-replay-btn:hover {

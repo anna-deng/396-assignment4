@@ -1,9 +1,18 @@
 import React from 'react';
 import './intestines.css';
+import $ from 'jquery';
+
+const replayIntestines = () => {
+    var elm = $("#intestines");
+    var newone = elm.clone(true);
+    elm.before(newone);
+    elm.remove();
+}
 
 const Intestines = () => {
     return (
-        <svg style={{marginLeft: '-100px', marginTop: '150px'}} width="600" height="330" viewBox="0 0 1848 1023" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div>
+        <svg id="intestines" style={{marginLeft: '-100px', marginTop: '150px'}} width="600" height="330" viewBox="0 0 1848 1023" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
             {/* <rect width="1848" height="1023" fill="#D77777" fill-opacity="0.13"/> */}
             <g filter="url(#filter0_d)">
@@ -274,7 +283,8 @@ const Intestines = () => {
             </clipPath>
             </defs>
         </svg>
-
+        <button id="intestines-replay-btn" onClick={() => replayIntestines()}>Replay</button>
+    </div>
     );
 }
 

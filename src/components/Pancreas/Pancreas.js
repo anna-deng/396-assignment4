@@ -1,9 +1,18 @@
 import React from 'react';
 import './pancreas.css';
+import $ from 'jquery';
+
+const replayPancreas = () => {
+    var elm = $("#pancreas");
+    var newone = elm.clone(true);
+    elm.before(newone);
+    elm.remove();
+}
 
 const Pancreas = () => {
     return (
-        <svg style={{marginLeft: '-150px', marginTop: '50px'}} width="660" height="545" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div>
+        <svg id="pancreas" style={{marginLeft: '-150px', marginTop: '50px'}} width="660" height="545" viewBox="0 0 1440 1322" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
             <rect width="1440" height="1322" fill="#FAFAFA"/>
             <g filter="url(#filter0_d)">
@@ -300,7 +309,8 @@ const Pancreas = () => {
             </clipPath>
             </defs>
         </svg>
-
+        <button id="pancreas-replay-btn" onClick={() => replayPancreas()}>Replay</button>
+        </div>
     );
 }
 
