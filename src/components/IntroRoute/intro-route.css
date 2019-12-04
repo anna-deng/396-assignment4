@@ -13,3 +13,11 @@
 .mono-icon {
     transform: scale(2) translate(-150px, -400px);
 }
+
+.insulin-icon {
+    transform: scale(9) translate(-1060px, -880px);
+}
+
+.beta-icon {
+    transform: scale(7) translate(-850px, -760px);
+}

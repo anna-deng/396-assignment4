@@ -1,0 +1,328 @@
+.zoom-in {
+    animation: zoom-in 3s ease-in-out 1 forwards;
+    transform: scale(.1) translate(4400px, 0px);
+  }
+  
+  @keyframes zoom-in {
+    100% {
+      transform: scale(1) translate(0px, 0px);
+    }
+    /* 0% {
+        transform: scale(.1);
+    } */
+    /* 90% {
+        opacity: 1;
+        transform: scale(1) translate(0px, 0px);
+    } */
+    /* 20% {
+        transform: translate(-)
+    } */
+    /* 99% {
+      transform: translate(800px, 850px);
+      opacity: 0;
+    } */
+  }
+
+.pancreas-mono1 {
+    animation: pancreas-mono1 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono1 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(0px, -171px);
+    }
+}
+
+.pancreas-mono2 {
+    animation: pancreas-mono2 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono2 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(-20px, -289px);
+    }
+}
+
+.pancreas-mono3 {
+    animation: pancreas-mono3 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono3 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(-20px, -165px);
+    }
+}
+
+.pancreas-mono4 {
+    animation: pancreas-mono4 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono4 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(-20px, -95px);
+    }
+}
+
+.pancreas-mono5 {
+    animation: pancreas-mono5 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono5 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(-200px, -350px);
+    }
+}
+
+.pancreas-mono6 {
+    animation: pancreas-mono6 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono6 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(0px, -20px);
+    }
+}
+
+.pancreas-mono7 {
+    animation: pancreas-mono7 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono7 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(0px, -13px);
+    }
+}
+
+.pancreas-mono8 {
+    animation: pancreas-mono8 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono8 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(0px, -20px);
+    }
+}
+
+.pancreas-mono9 {
+    animation: pancreas-mono9 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono9 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        opacity: 1;
+        transform: translate(0px, -90px);
+    }
+}
+
+.pancreas-mono10 {
+    animation: pancreas-mono10 1s ease-in-out 1 forwards;
+    animation-delay: 3s;
+    opacity: 0;
+  }
+  
+  @keyframes pancreas-mono10 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+   0% {
+        opacity: 1;
+        transform: translate(0px, -50px);
+    }
+}
+
+
+.insulin1 {
+    animation: insulin1 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin1 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-160px, 0px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin2 {
+    animation: insulin2 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin2 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-190px, 145px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin3 {
+    animation: insulin3 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin3 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-195px, 110px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin4 {
+    animation: insulin4 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin4 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-180px, -10px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin5 {
+    animation: insulin5 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin5 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-95px, 20px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin6 {
+    animation: insulin6 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin6 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-175px, 100px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.insulin7 {
+    animation: insulin7 2s ease-in-out 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+  }
+  
+  @keyframes insulin7 {
+    100% {
+      transform: translate(0px, 0px);
+      opacity: 1;
+    }
+    0% {
+        transform: translate(-250px, 75px);
+    }
+    50% {
+        opacity: 1;
+    }
+}
