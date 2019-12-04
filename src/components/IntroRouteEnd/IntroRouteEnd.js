@@ -33,9 +33,11 @@ import ManGalactose from '../ManGalactose';
             <CongratsHeading>
               How do different types sugars affect your body differently?
             </CongratsHeading>
-            {/* <LimitedParagraph style={{maxWidth: '1000px;'}}>
-              Select a food on the left to see the effects on your body.
-            </LimitedParagraph> */}
+              <p className='subtitle'>
+                Select a food on the left to see the effects on your body.
+              </p>
+            <br />
+            <br />
             <LimitedParagraph>
               <div className='outer-container'>
                 <div className='end-left'>
