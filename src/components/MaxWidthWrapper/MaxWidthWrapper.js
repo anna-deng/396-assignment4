@@ -15,10 +15,9 @@ const MaxWidthWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: ${props => props.maxWidth || MAX_WIDTH.base};
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 100px;
+  margin-right: 10px;
   padding-left: ${getPadding};
-  padding-right: ${getPadding};
 
   @media ${BREAKPOINTS.sm} {
     max-width: 100%;
@@ -28,5 +27,7 @@ const MaxWidthWrapper = styled.div`
     max-width: ${BREAKPOINT_SIZES.md + 'px'};
   }
 `;
+
+// ${props => props.maxWidth || MAX_WIDTH.base};
 
 export default (props: Props) => <MaxWidthWrapper {...props} />;

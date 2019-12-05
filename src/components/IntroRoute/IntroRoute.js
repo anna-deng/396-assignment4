@@ -28,6 +28,7 @@ import Stomach from '../Stomach';
 import Intestines from '../Intestines';
 import Pancreas from '../Pancreas';
 import Liver from '../Liver';
+import ManNavigation from '../ManNavigation';
 
 
 import { steps, stepsArray, INTRO_STEPS } from './IntroRoute.steps';
@@ -441,6 +442,7 @@ class IntroRoute extends PureComponent<Props, State> {
             rolloverRatio={ACTIVE_STEP_ROLLOVER_RATIO}
             innerRef={elem => (this.sectionRefs[index] = elem)}
           >
+            {/* <ManNavigation/> */}
             {typeof section.children === 'function'
               ? section.children({
                   amplitude,
@@ -490,6 +492,9 @@ class IntroRoute extends PureComponent<Props, State> {
                   progress
                 )}
                 {this.renderTutorialColumn(amplitude, frequency, progress)}
+                <NavigationColumn>
+                  <ManNavigation/>
+                </NavigationColumn>
               </MainContent>
             )}
           </WaveformPlayer>
@@ -581,9 +586,20 @@ const WaveformWrapper = styled.div`
 
 const TutorialColumn = styled.div`
   flex: 1;
-
+  max-width: 100%;
+  margin-right: 50px;
   @media (orientation: landscape) {
     margin-left: ${LANDSCAPE_GUTTER / 2 + 'px'};
+  }
+`;
+
+const NavigationColumn = styled.div`
+  flex: 1;
+  float: right;
+  max-width: 175px;
+  height: 100%;
+  margin-right: -200px;
+  @media (orientation: landscape) {
   }
 `;
 
