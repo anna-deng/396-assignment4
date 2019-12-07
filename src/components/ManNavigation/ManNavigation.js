@@ -143,6 +143,9 @@ const ManNavigation = () => {
 <rect width="152.609" height="178.242" fill="white" transform="translate(313.014 645) rotate(14.4617)"/>
 </clipPath>
 </defs>
+
+<circle cx="100" cy="350" r="20" fill="#7E0C00" stroke="#BC5952" stroke-width="7"/>
+<ellipse cx="671.697" cy="212.361" rx="13.5" ry="27" transform="rotate(-140 671.697 212.361)" fill="white"/>
 </svg>
 
     )}
