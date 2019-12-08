@@ -314,12 +314,12 @@ class IntroRoute extends PureComponent<Props, State> {
                 {this.renderTutorialColumn(amplitude, frequency, progress)}
                 {currentStep != 'conclusion' && currentStep != 'title' && currentStep != 'intro' &&
                   <NavigationColumn>
-                    {(currentStep == 'types-of-sugar'|| currentStep == 'intro-digestive') && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
-                    {currentStep == 'mouth-and-esophagus' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
-                    {currentStep == 'stomach' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
-                    {currentStep == 'small-large-intestine' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
-                    {currentStep == 'pancreas' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
-                    {currentStep == 'liver' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {(currentStep == 'types-of-sugar'|| currentStep == 'intro-digestive') && <ManNavigation currentStep={currentStep} />}
+                    {currentStep == 'mouth-and-esophagus' && <ManNavigation currentStep={currentStep} />}
+                    {currentStep == 'stomach' && <ManNavigation currentStep={currentStep} />}
+                    {currentStep == 'small-large-intestine' && <ManNavigation currentStep={currentStep} />}
+                    {currentStep == 'pancreas' && <ManNavigation currentStep={currentStep} />}
+                    {currentStep == 'liver' && <ManNavigation currentStep={currentStep} />}
                   </NavigationColumn>
                 }
               </MainContent>
