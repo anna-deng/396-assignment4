@@ -9,22 +9,9 @@ This interactive explorable explanation describes the digestive processes that t
 
 This guide is aimed at the general public – no prior knowledge/experience is necessary.
 
-[**Check it out!**](https://waveforms.surge.sh)
+[**Take a look!!!👀**](http://annadeng.com/396-assignment4/)
 
 ---
-
-### Future plans
-
-I'm toying with the idea of making this a series. There are other interesting audio concepts to explore. Off the top of my head:
-
-* FFT
-* Human perception of sound
-* Phase offset effects like phasers, flangers, delays, and reverb
-* Distortion (clip distortion, bit reduction)
-* FM/AM synthesis
-* Envelope generators and filters.
-
-It's likely I won't get to this anytime soon, but do let me know if you think there's a need for interactive explanations of these concepts!
 
 ### How It's Made
 
