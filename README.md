@@ -15,7 +15,7 @@ This guide is aimed at the general public – no prior knowledge/experience is n
 
 ### How It's Made
 
-This tutorial-thingy is purely front-end, built with React. No state management library was needed. Styled with `styled-components`.
+This explorable explanation is built with React and CSS animations and is styled with `styled-components`.
 
 All the graphics were drawn ourselves and are rendered with SVG.
 
@@ -23,3 +23,5 @@ All the graphics were drawn ourselves and are rendered with SVG.
 ### Running locally
 
 If you want to run this on your machine, first `git clone`, `npm install`, and then `npm start`.
+
+> Note: This project was created for CS 396: Interactive Data Visualization, a technical elective course taught by Jessica Hullman at Northwestern University.
