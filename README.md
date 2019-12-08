@@ -1,6 +1,6 @@
 # How Do We Digest Sugars?
 
-![Convergence Demo](demo.gif)
+![Demo](396-a4-demo.gif)
 
 This interactive explorable explanation describes the digestive processes that take place when we consume sugar. It is divded into three sections: 
 - Sugar overview: to help users understand the different types of sugars we consume.
@@ -9,7 +9,7 @@ This interactive explorable explanation describes the digestive processes that t
 
 This guide is aimed at the general public – no prior knowledge/experience is necessary.
 
-[**Take a look!!!👀**](http://annadeng.com/396-assignment4/)
+[**Take a look!!!🍪**](http://annadeng.com/396-assignment4/)
 
 ---
 
@@ -17,18 +17,9 @@ This guide is aimed at the general public – no prior knowledge/experience is n
 
 This tutorial-thingy is purely front-end, built with React. No state management library was needed. Styled with `styled-components`.
 
-The waveforms are rendered with SVG (although they can also render to Canvas with the change of a prop), and the air molecule grids render to Canvas. I used the fancy new IntersectionObserver to handle the scroll-based logic, with a fallback to a simple scroll listener.
+All the graphics were drawn ourselves and are rendered with SVG.
 
-> NOTE: This was a very interesting project from a technical perspective! I needed to draw Waveforms in lots of different configurations and states. Waveforms can be one of a series of predefined shapes, or arbitrary shapes (as is the case when converging multiple waveforms together). Waveforms can be "playing", and any state change that can happen (even changing the waveform shape) needs to work whether it's staying still or playing. Also, every transition should use spring physics. Also, it should be performant while doing all of this.
->
-> I started writing up how it works, but I realized that it is super non-trivial, and it deserves a proper blog post. I would like to write that blog post at some point. If this interests you, feel free to [poke me on Twitter](https://twitter.com/JoshWComeau) and remind me.
->
-> You can also poke around yourself! Check out all the components that start with `Waveform`, like `WaveformPlayer` or `WaveformTween`.
 
 ### Running locally
 
-Want to run this on your machine? it _should_ be as simple as `git clone`, `yarn install`, and `yarn:start`. Let me know if that fails.
-
-### Contributing
-
-Please open issues describing changes you'd like to contribute before spending any time working on them; this is a personal side-project, and I open-sourced it primarily as an educational thing, for those curious how it was built. I'm not actively seeking external contributions, and there would be a bit of friction (this repo is no longer the "source of truth" for the project, as it lives on The Pudding).
+If you want to run this on your machine, first `git clone`, `npm install`, and then `npm start`.
