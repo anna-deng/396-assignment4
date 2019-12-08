@@ -1,10 +1,13 @@
-# Waveforms
+# How Do We Digest Sugars?
 
 ![Convergence Demo](demo.gif)
 
-This interactive guide introduces and explores waveforms. It covers how to read waveform graphs, goes over the fundamental physics of sound, teaches how it relates to music and harmony, and demonstrates how to build complex tones from simple ones.
+This interactive explorable explanation describes the digestive processes that take place when we consume sugar. It is divded into three sections: 
+- Sugar overview: to help users understand the different types of sugars we consume.
+- Step-by-Step walkthrough of the sugar digestive process: to help users understand the process that occurs in our digestive system to break down the consumed sugar.
+- Effects of sugar: to help users understand the repercussions of sugar consumption, particularly, overconsumption of sugar which many Americans struggle with.
 
-This guide is aimed at a general audience–no prior knowledge is required.
+This guide is aimed at the general public – no prior knowledge/experience is necessary.
 
 [**Check it out!**](https://waveforms.surge.sh)
 
