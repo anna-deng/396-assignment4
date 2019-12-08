@@ -40,11 +40,21 @@
 }
 
 .cereal {
-    transform: scale(1) translate(-200px, 0px)
+    transform: scale(1) translate(-200px, 0px);
+}
+
+.cereal-grey {
+    transform: scale(1) translate(-200px, 0px);
+    opacity: .3;
 }
 
 .cheese {
     transform: scale(.75) translate(-700px, -200px);
+}
+
+.cheese-grey {
+    transform: scale(2.25) translate(-632px, -265px);
+    opacity: .3;
 }
 
 .cheese-caption {
@@ -55,6 +65,15 @@
     transform: translate(-200px, 0px);
 }
 
+.cupcake-grey {
+    transform: translate(-200px, 0px);
+    opacity: .3;
+}
+
 .cupcake-caption {
     transform: scale(1.6) translate(53px, 50px);
+}
+
+.glycogen-icon{
+    transform: scale(10) translate(-460px, -580px);
 }
