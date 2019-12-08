@@ -219,142 +219,6 @@ class IntroRoute extends PureComponent<Props, State> {
     this.setState({ currentStep: nextStep });
   };
 
-  // renderAudio() {
-  //   const {
-  //     currentStep,
-  //     amplitude,
-  //     frequency,
-  //     phase,
-  //     harmonicsForShape,
-  //     numOfHarmonics,
-  //     audioVolume,
-  //     audioMuted,
-  //     audioEnabled,
-  //   } = this.state;
-
-  //   // This renders the actual audio: No visual UI.
-  //   // This is dependent on audio being enabled, which only happens when the
-  //   // user unmutes the audio somehow.
-  //   //
-  //   // This is mostly to get around mobile Safari's requirement that audio only
-  //   // happen as a response to user action.
-  //   if (!audioEnabled) {
-  //     return null;
-  //   }
-
-  //   const stepData = steps[currentStep];
-
-  //   const effectiveAudioVolume = (audioMuted ? 0 : audioVolume) * 0.5;
-
-  //   // While our waveforms will render between 0.2Hz and 3Hz, we also have an
-  //   // oscillator that needs to vibrate at normal ranges.
-  //   // By multiplying by 100, we ensure that doubling the unit still augments
-  //   // the pitch by an octave. We also add 100 to make the low-end audible.
-  //   const adjustedAudibleFrequency = frequency * 130.81;
-
-  //   return (
-  //     <AudioOutput masterVolume={effectiveAudioVolume}>
-  //       {(audioCtx, masterOut) =>
-  //         // TODO: I found out too late that the Web Audio API has a
-  //         // periodicWave type which does exactly what I want, albeit with a
-  //         // bunch of fourier math.
-  //         //
-  //         // It would also help with the phase issue, since then it's just
-  //         // a simple param.
-  //         //
-  //         // Switch to it!
-  //         // https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
-  //         stepData.useWaveformAddition ? (
-  //           getWaveforms({
-  //             type: stepData.waveformAdditionType,
-  //             baseFrequency: adjustedAudibleFrequency,
-  //             baseAmplitude: amplitude,
-  //             harmonicsForShape,
-  //             phase,
-  //             numOfHarmonics,
-  //           })
-  //             .filter(({ frequency }) => frequency < 20000)
-  //             .map(({ frequency, amplitude, offset }, index, waveforms) => {
-  //               // Web Audio API doesn't support phase as a param to
-  //               // Oscillators. This is a shame, since I need to show how phase
-  //               // offset affects amplitude.
-  //               //
-  //               // My hacky workaround is just to multiply the amplitudes when
-  //               // appropriate.
-  //               //
-  //               if (stepData.waveformAdditionType === 'phase') {
-  //                 // HACK: This whole bit is gross. This should really be
-  //                 // abstracted elsewhere.
-
-  //                 // We know that for phase addition, we only have 2 waveforms,
-  //                 // and the phase is being applied to the 1st one.
-  //                 // No matter which one we're iterating through in this map,
-  //                 // we want to consider the first waveform's offset.
-  //                 const waveformWithOffset = waveforms[0];
-
-  //                 // The offset is a number from 0 to 100.
-  //                 // At 0 and 100, the amplitude is 1.
-  //                 // at 50, the amplitude is 0.
-  //                 const { offset } = waveformWithOffset;
-
-  //                 // By subtracting 50, we make the value range from -50 to 50.
-  //                 // Then, we can get the absolute value so that it's from 0
-  //                 // to 50.
-  //                 // Finally, we multiply by 2 (so that it's 0-100), and divide
-  //                 // by 100 (so that it's 0-1).
-  //                 const absoluteOffset = Math.abs(50 - offset) * 2 / 100;
-
-  //                 amplitude *= absoluteOffset;
-  //               }
-
-  //               return (
-  //                 <Oscillator
-  //                   key={index}
-  //                   shape="sine"
-  //                   amplitude={amplitude}
-  //                   frequency={frequency}
-  //                   audioCtx={audioCtx}
-  //                   masterOut={masterOut}
-  //                 />
-  //               );
-  //             })
-  //         ) : (
-  //           <Oscillator
-  //             key="base-frequency"
-  //             slidePitch
-  //             shape={stepData.waveformShape}
-  //             amplitude={amplitude}
-  //             frequency={adjustedAudibleFrequency}
-  //             audioCtx={audioCtx}
-  //             masterOut={masterOut}
-  //           />
-  //         )
-  //       }
-  //     </AudioOutput>
-  //   );
-  // }
-
-  // renderVolumeControl() {
-  //   const { currentStep, audioVolume, audioMuted } = this.state;
-
-  //   const stepData = steps[currentStep];
-
-  //   return (
-  //     <VolumeAdjusterLayer>
-  //       <FadeTransition isVisible={stepData.showVolumeControls}>
-  //         <VolumeAdjusterWrapper>
-  //           <VolumeAdjuster
-  //             currentVolume={audioVolume}
-  //             isMuted={audioMuted}
-  //             onAdjustVolume={this.handleUpdateAudioVolume}
-  //             onToggleMute={this.handleToggleMuteAudio}
-  //           />
-  //         </VolumeAdjusterWrapper>
-  //       </FadeTransition>
-  //     </VolumeAdjusterLayer>
-  //   );
-  // }
-
   renderWaveformColumn(
     amplitude: number,
     frequency: number,
@@ -372,7 +236,6 @@ class IntroRoute extends PureComponent<Props, State> {
           {(width: number) => (
             <FlexParent>
               <WaveformWrapper>
-              {/* {currentStep == 'title' && <img style={{width: '75%'}}src={require('../../images/dude.svg')} />} */}
               {(currentStep == 'title' || currentStep == 'intro') && <IntroFace />}
               {(currentStep == 'types-of-sugar'|| currentStep == 'intro-digestive') && <TypesOfSugars />}
               {currentStep == 'mouth-and-esophagus' && <MouthAndEsophagus />}
@@ -380,46 +243,7 @@ class IntroRoute extends PureComponent<Props, State> {
               {currentStep == 'small-large-intestine' && <Intestines />}
               {currentStep == 'pancreas' && <Pancreas />}
               {currentStep == 'liver' && <Liver />}
-
-
-                {/* {!stepData.useWaveformAddition && (
-                  <IntroRouteWaveform
-                    width={width}
-                    amplitude={amplitude}
-                    frequency={frequency}
-                    progress={progress}
-                    stepData={stepData}
-                  />
-                )}
-
-                {stepData.useWaveformAddition && (
-                  <IntroRouteWaveformAddition
-                    type={stepData.waveformAdditionType}
-                    width={width}
-                    stepData={stepData}
-                    baseAmplitude={amplitude}
-                    baseFrequency={frequency}
-                    harmonicsForShape={harmonicsForShape}
-                    numOfHarmonics={numOfHarmonics}
-                    convergence={convergence}
-                    phase={phase}
-                  />
-                )} */}
               </WaveformWrapper>
-              {/* <WaveformControls
-                width={width}
-                amplitude={amplitude}
-                frequency={frequency}
-                numOfHarmonics={numOfHarmonics}
-                convergence={convergence}
-                phase={phase}
-                handleUpdateAmplitude={this.handleUpdateAmplitude}
-                handleUpdateFrequency={this.handleUpdateFrequency}
-                handleUpdateNumOfHarmonics={this.handleUpdateNumOfHarmonics}
-                handleUpdateConvergence={this.handleUpdateConvergence}
-                handleUpdatePhase={this.handleUpdatePhase}
-                stepData={stepData}
-              /> */}
             </FlexParent>
           )}
         </IntroRouteWaveformWrapper>
@@ -429,7 +253,7 @@ class IntroRoute extends PureComponent<Props, State> {
 
   renderTutorialColumn(amplitude: number, frequency: number, progress: number) {
     const { currentStep, windowHeight } = this.state;
-
+    console.log('tutorial column', currentStep)
     return (
       <TutorialColumn>
         {stepsArray.map((section, index) => (
@@ -471,10 +295,6 @@ class IntroRoute extends PureComponent<Props, State> {
     return (
       <Fragment>
         <MaxWidthWrapper>
-          {/* {this.renderAudio()} */}
-
-          {/* {this.renderVolumeControl()} */}
-
           <WaveformPlayer
             isPlaying={stepData.isPlaying}
             amplitude={amplitude}
@@ -492,9 +312,16 @@ class IntroRoute extends PureComponent<Props, State> {
                   progress
                 )}
                 {this.renderTutorialColumn(amplitude, frequency, progress)}
-                <NavigationColumn>
-                  <ManNavigation/>
-                </NavigationColumn>
+                {currentStep != 'conclusion' && currentStep != 'title' && currentStep != 'intro' &&
+                  <NavigationColumn>
+                    {(currentStep == 'types-of-sugar'|| currentStep == 'intro-digestive') && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {currentStep == 'mouth-and-esophagus' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {currentStep == 'stomach' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {currentStep == 'small-large-intestine' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {currentStep == 'pancreas' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                    {currentStep == 'liver' && <ManNavigation currentStep={currentStep} updateStep={(step) => this.setState({currentStep: step})}/>}
+                  </NavigationColumn>
+                }
               </MainContent>
             )}
           </WaveformPlayer>

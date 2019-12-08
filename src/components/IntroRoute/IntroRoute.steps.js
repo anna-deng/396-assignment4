@@ -365,14 +365,14 @@ export const steps = {
       </Fragment>
     ),
   },
-  over: {
-    ...defaults,
-    showWaveform: false,
-    showVolumeControls: false,
-    isPlaying: false,
-    getMargin: marginFunctions.none,
-    children: null,
-  },
+  // over: {
+  //   ...defaults,
+  //   showWaveform: false,
+  //   showVolumeControls: false,
+  //   isPlaying: false,
+  //   getMargin: marginFunctions.none,
+  //   children: null,
+  // },
 };
 
 export const stepsArray = Object.entries(steps).map(([key, value]) => ({

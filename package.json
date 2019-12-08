@@ -11,9 +11,10 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "flow": "flow",
-    "deploy": "yarn run build && surge -p build -d waveforms.surge.sh",
     "deploy:no-build": "surge -p build -d waveforms.surge.sh",
-    "stats": "NODE_ENV=production webpack --config config/webpack.config.prod.js --json > stats.json"
+    "stats": "NODE_ENV=production webpack --config config/webpack.config.prod.js --json > stats.json",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@material-ui/core": "^4.7.1",
@@ -71,7 +72,8 @@
     "@storybook/addon-actions": "^3.2.17",
     "@storybook/addon-links": "^3.2.15",
     "@storybook/react": "^3.2.15",
-    "babel-plugin-styled-components": "^1.4.0"
+    "babel-plugin-styled-components": "^1.4.0",
+    "gh-pages": "^2.1.1"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -117,5 +119,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "homepage": "http://annadeng.com/396-assignment4"
 }

@@ -33,9 +33,9 @@ import ManGalactose from '../ManGalactose';
             <CongratsHeading>
               How do different types sugars affect your body differently?
             </CongratsHeading>
-            {/* <LimitedParagraph style={{maxWidth: '1000px;'}}>
+            <LimitedParagraph style={{marginLeft: '285px'}}>
               Select a food on the left to see the effects on your body.
-            </LimitedParagraph> */}
+            </LimitedParagraph>
             <LimitedParagraph>
               <div className='outer-container'>
                 <div className='end-left'>
@@ -116,6 +116,7 @@ const CongratsHeading = styled(Heading)`
 
   @media ${BREAKPOINTS.mdMin} {
     font-size: 56px;
+    margin-left: 100px;
   }
 `;
 
@@ -124,9 +125,9 @@ const LetterSquash = styled.span`
 `;
 
 const LimitedParagraph = styled(Paragraph)`
-  max-width: 600px;
+  max-width: 1000px;
   font-size: 26px;
-  margin-left: auto;
+  margin-left: 250px;
   margin-right: auto;
   margin-bottom: 42px;
 `;

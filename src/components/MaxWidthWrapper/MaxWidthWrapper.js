@@ -8,7 +8,7 @@ import { getPadding } from './MaxWidthWrapper.helpers';
 
 type Props = {
   noPadding: boolean,
-  noPaddingOnMobile: boolean,
+  noPaddingOnMobile: boolean
 };
 
 const MaxWidthWrapper = styled.div`
