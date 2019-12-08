@@ -23,6 +23,7 @@ type Props = {
 class IntroRouteSection extends Component<Props> {
   shouldComponentUpdate(nextProps: Props) {
     if (nextProps.id === nextProps.currentStep) {
+      console.log('here')
       return true;
     }
 
@@ -31,7 +32,7 @@ class IntroRouteSection extends Component<Props> {
         INTRO_STEPS.indexOf(nextProps.currentStep)
     );
 
-    return delta <= 1;
+    return delta <= 1 || delta > 1;
   }
 
   render() {
@@ -46,7 +47,8 @@ class IntroRouteSection extends Component<Props> {
     } = this.props;
 
     const isSelected = id === currentStep;
-
+    console.log('id', id)
+    console.log('section', currentStep);
     return (
       <IntersectionObserver
         onlyFireOn="enter"
